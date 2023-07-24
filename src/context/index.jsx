@@ -1,11 +1,11 @@
-import LanguageProvider from './Language';
+import LanguagePovider from "./Language";
 
-export default function RootContext ({ children }) {
+const RootContext = ({ children }) => {
   return (
-    <>
-      <LanguageProvider>
-        {children}
-      </LanguageProvider>
-    </>
+    <LanguagePovider>
+      {children}
+    </LanguagePovider>
   )
 }
+
+export default RootContext;

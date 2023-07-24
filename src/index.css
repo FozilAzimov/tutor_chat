@@ -14,6 +14,10 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
+#root {
+  height: 100vh;
+}
+
 :root {
   /* color */
   --textPrimaryColor: #347AE2;
@@ -24,7 +28,11 @@ body {
   /* background */
   --backgroundPrimary: #5595EA;
   --backgroundBtn: #9FC9EF;
+  --genericBackground: #f2f2f2;
 
-  /* padding */
-  --padding: 0 21px;
+  /* padding max */
+  --paddingMax: 0 130px;
+
+  /* padding min */
+  --paddingMin: 0 20px;
 }
