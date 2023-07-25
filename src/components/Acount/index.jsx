@@ -26,7 +26,7 @@ export default function Acount () {
             <Img src={img} />
           </FonImg>
         </FonImgWrap>
-        <Button width='100%' min='200' max='388'>Next</Button>
+        <Button width='100%' top='200'>Next</Button>
       </Title>
     </Wrapper>
   )

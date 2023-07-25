@@ -3,8 +3,6 @@ import { styled } from "styled-components";
 const Selects = styled.select`
 
 @media(max-width: 576px){
-  max-width: 388px;
-  min-width: 200px;
   width: 100%;
   padding: 17px 0 17px 15px;
   margin-top: 105px;

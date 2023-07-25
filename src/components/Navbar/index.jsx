@@ -20,8 +20,8 @@ export default function Navbar () {
       <Container>
         <NavbarWrapper>
           {
-            navbar.map(({ url, path }, index) => {
-              return (
+            navbar.map(({ url, path, hidden }, index) => {
+              return !hidden && (
                 <NavLink key={index} to={path}>
                   <NavImg src={url} />
                 </NavLink>

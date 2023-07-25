@@ -9,7 +9,7 @@ export default function Root () {
     <Routes>
       <Route element={<Navbar />}>
         {
-          navbar.map(({ path, element, id }) => {
+          navbar.map(({ id, path, element }) => {
             return <Route key={id} path={path} element={element} />
           })
         }
