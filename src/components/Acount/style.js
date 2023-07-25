@@ -23,7 +23,7 @@ const Title = styled.div`
 @media(max-width: 576px){
   width: 100%;
   text-align: center;
-  margin-top: 80px;
+  margin-top: 40px;
 }
 `
 
