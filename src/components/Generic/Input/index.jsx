@@ -14,6 +14,7 @@ export default function Input ({
   fontSize,
   placeholder,
   icon,
+  name,
 }) {
 
   return (
@@ -25,6 +26,7 @@ export default function Input ({
         onChange={onChange}
         onInput={onInput}
         type={type}
+        name={name}
         width={width}
         fontSize={fontSize}
         placeholder={placeholder}
