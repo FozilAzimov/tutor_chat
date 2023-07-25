@@ -149,15 +149,12 @@ cursor: pointer;
 margin: 0 5px;
 `
 
-const FooterBtn = styled.button`
+const FooterBtn = styled.div`
 width: 50px;
-height: 20px;
-border: 1px dashed #9747FF;
-border-radius: 45px;
 color: #555;
 font-size: 12px;
 font-weight: 700;
-background: #fff;
+text-decoration: underline;
 cursor: pointer;
 `
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import img from '../../assets/imgs/language_fon.jpg'
 
@@ -18,8 +18,21 @@ import { useNavigate } from 'react-router-dom';
 export default function Acount () {
 
   const navigate = useNavigate();
+  const [cheked, setCheked] = useState('');
+  const [check, setCheck] = useState('');
+
   const Click = () => {
     navigate('/loginacount');
+  }
+
+  const Change = ({ target: { value } }) => {
+    if (value === "uz" || value === "ru" || value === "en") {
+      setCheked('primary');
+      setCheck(value);
+    }
+    else {
+      setCheked();
+    }
   }
 
   return (
@@ -28,12 +41,16 @@ export default function Acount () {
         <LanguageIcon />
         <TitleText>Language</TitleText>
         <FonImgWrap>
-          <Select />
+          <Select onChange={Change} />
           <FonImg>
             <Img src={img} />
           </FonImg>
         </FonImgWrap>
-        <Button width='100%' top='150' onClick={Click}>Next</Button>
+        {
+          check
+            ? <Button width='100%' top='150' onClick={Click} type={cheked}>Next</Button>
+            : <Button width='100%' top='150'>Next</Button>
+        }
       </Title>
     </Wrapper>
   )

@@ -4,19 +4,10 @@ import {
   Selects,
 } from './style';
 
-export default function Select () {
-
-  // let Checked = false;
-  // let Change = ({ target: { value } }) => {
-
-  //   (value === "uz" || value === "ru" || value === "en")
-  //     ? Checked = true
-  //     : Checked = false;
-  // }
+export default function Select ({ onChange }) {
 
   return (
-    // <Selects onChange={Change}>
-    <Selects>
+    <Selects onChange={onChange}>
       <Option value=''>Select Language</Option>
       <Option value='uz'>O'zbek</Option>
       <Option value='ru'>Russia</Option>

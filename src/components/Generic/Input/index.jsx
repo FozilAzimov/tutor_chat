@@ -6,14 +6,29 @@ import {
   Wrap
 } from './style';
 
-export default function Input ({ type, width, fontSize, placeholder, icon }) {
+export default function Input ({
+  onChange,
+  onInput,
+  type,
+  width,
+  fontSize,
+  placeholder,
+  icon,
+}) {
 
   return (
     <Wrap>
       {
         icon && <Icons.InputIcon />
       }
-      <GenericInput type={type} width={width} fontSize={fontSize} placeholder={placeholder} />
+      <GenericInput
+        onChange={onChange}
+        onInput={onInput}
+        type={type}
+        width={width}
+        fontSize={fontSize}
+        placeholder={placeholder}
+      />
     </Wrap>
   )
 }
