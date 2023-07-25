@@ -54,7 +54,7 @@ const FonImg = styled.div`
   width: 274px;
   height: 258px;
   position: absolute;
-  top: 80px;
+  top: 40px;
   left: 50%;
   transform: translateX(-50%);
   z-index: -1;

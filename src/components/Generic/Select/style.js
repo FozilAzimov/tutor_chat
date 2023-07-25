@@ -5,7 +5,7 @@ const Selects = styled.select`
 @media(max-width: 576px){
   width: 100%;
   padding: 17px 0 17px 15px;
-  margin-top: 105px;
+  margin-top: 70px;
   color: var(--textLightColor);
   font-size: 15px;
   font-weight: 500;
