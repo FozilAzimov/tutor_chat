@@ -19,9 +19,11 @@ import {
 import titleImg from '../../assets/imgs/login_icon.jpg';
 
 import { Button, Input } from '../Generic';
+import { useNavigate } from 'react-router-dom';
 
 export default function LoginAcount () {
 
+  const navigate = useNavigate();
   const [type, setType] = useState('password');
   const [isHidden, setIsHidden] = useState(true);
 
@@ -34,6 +36,10 @@ export default function LoginAcount () {
       setType('password');
       setIsHidden(true);
     }
+  }
+
+  const getHome = () => {
+    navigate('/home');
   }
 
   return (
@@ -67,7 +73,7 @@ export default function LoginAcount () {
           <Link>Forgot Password?</Link> or
           <Link>Login</Link>
         </SpanText>
-        <Button width='100%' top='40'>Login</Button>
+        <Button width='100%' top='40' onClick={getHome}>Login</Button>
         <SpanText>
           <Link>If you don’t have an account</Link>
           <FooterBtn>Sign up</FooterBtn>

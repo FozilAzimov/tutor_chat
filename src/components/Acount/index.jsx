@@ -13,8 +13,15 @@ import {
 } from './style';
 
 import { Button, Select } from '../Generic';
+import { useNavigate } from 'react-router-dom';
 
 export default function Acount () {
+
+  const navigate = useNavigate();
+  const Click = () => {
+    navigate('/loginacount');
+  }
+
   return (
     <Wrapper>
       <Title>
@@ -26,7 +33,7 @@ export default function Acount () {
             <Img src={img} />
           </FonImg>
         </FonImgWrap>
-        <Button width='100%' top='150'>Next</Button>
+        <Button width='100%' top='150' onClick={Click}>Next</Button>
       </Title>
     </Wrapper>
   )
