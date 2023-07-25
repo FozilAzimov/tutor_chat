@@ -61,7 +61,7 @@ export default function LoginAcount () {
         </Wrap>
         <Check>
           <Input width='10px' type='checkbox' icon={false} />
-          <span style={{ display: 'flex', gap: '5px' }}>Remember <span>password</span></span>
+          <span style={{ display: 'flex', marginLeft: '15px' }}>Remember <span style={{ marginLeft: '5px' }}>password</span></span>
         </Check>
         <SpanText>
           <Link>Forgot Password?</Link> or

@@ -128,7 +128,6 @@ const Check = styled.div`
   display: flex;
   align-items: center;
   justify-content: start;
-  gap: 15px;
   font-size: 13px;
   font-weight: 4000;
   margin-top: 20px;
@@ -137,7 +136,6 @@ const Check = styled.div`
 
 const SpanText = styled.span`
 display: flex;
-gap: 5px;
 justify-content: center;
 align-items: center;
 font-size: 12px;
@@ -148,6 +146,7 @@ margin-top: 40px;
 const Link = styled.div`
 color: var(--textPrimaryColor);
 cursor: pointer;
+margin: 0 5px;
 `
 
 const FooterBtn = styled.button`
