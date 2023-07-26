@@ -20,19 +20,17 @@ import titleImg from '../../assets/imgs/login_icon.jpg';
 
 import { Button, Input } from '../Generic';
 import { useNavigate } from 'react-router-dom';
-import useRequest from '../../hooks/useRequest';
 import { message } from 'antd';
 
 export default function LoginAcount () {
 
   const navigate = useNavigate();
-  const request = useRequest();
   const [body, setBody] = useState({});
   const [, setError] = useState(false);
   const [type, setType] = useState('password');
   const [isHidden, setIsHidden] = useState(true);
-  const [email, setEmail] = useState(false);
-  const [password, setPassword] = useState(false);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [typeBtn, setTypeBtn] = useState('');
 
   const Hidden = () => {
@@ -46,13 +44,9 @@ export default function LoginAcount () {
     }
   }
 
-  const getInpValue = ({ target: { value } }) => (value.length > 5 && value.includes('@'))
-    ? setEmail(true)
-    : setEmail(false);
+  const getInpValue = ({ target: { value } }) => setEmail(value);
 
-  const getInpLength = ({ target: { value } }) => value.length > 8
-    ? setPassword(true)
-    : setPassword(false);
+  const getInpLength = ({ target: { value } }) => setPassword(value);
 
   const getChecked = ({ target: { checked } }) => (email && password && checked)
     ? setTypeBtn('primary')
@@ -75,12 +69,19 @@ export default function LoginAcount () {
   }
 
   const getSubmit = () => {
-    request({ url: `/public/auth/login`, method: 'POST', body, me: true })
-      .then((res) => {
-        if (res?.authenticationToken) {
+
+    fetch('https://api.tutorchat.uz/api/login/public/login_to_system', {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify(body),
+    }).then(res => res.json())
+      .then(res => {
+        if (res?.token) {
+          localStorage.setItem('token', res?.token);
           info();
           navigate(`/home`);
-          localStorage.setItem('token', res?.authenticationToken);
         }
         else warning();
       });
@@ -100,7 +101,7 @@ export default function LoginAcount () {
             <Icons.Acount />
           </Box>
         </TitleTextWrapper>
-        <Input onInput={getInpValue} onChange={onChange} name='email' width='100%' type='email' placeholder='Your username' icon={true} />
+        <Input onInput={getInpValue} onChange={onChange} name='username' width='100%' type='email' placeholder='Your username' icon={true} />
         <Wrap>
           {
             isHidden

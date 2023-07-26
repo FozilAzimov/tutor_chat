@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar';
 
 
 export default function Root () {
+
   return <BrowserRouter>
     <Routes>
       <Route element={<Navbar />}>

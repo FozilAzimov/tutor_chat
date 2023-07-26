@@ -1,20 +1,22 @@
-const { REACT_APP_SECRET_URL } = process.env;
+
+// const { REACT_APP_SECRET_URL: api } = process.env;
+const api = 'https://api.tutorchat.uz/api';
 
 export const useRequest = () => {
 
-  const request = async ({ me, url, method = 'GET', body, headers = {}, token, }) => {
+  const request = async ({ url, method = 'GET', body, headers = {}, token }) => {
 
-    if (token) headers.Authorization = `Bearer ${localStorage.getItem('token')}`;
+    if (token) headers.Authorization = `${localStorage.getItem('token')}`;
 
     const options = {
-      method,
-      headers: { ...headers, "Content-type": "application/json" },
       body: JSON.stringify(body),
+      headers: { ...headers, "Content-Type": "application/json" },
+      method,
     };
 
-    return fetch(`${me ? 'http://localhost:8081/api' : REACT_APP_SECRET_URL}${url}`, options)
-      .then((res) => res.json());
+    return fetch(`${api}${url}`, options).then((res) => res.json());
   };
+
 
   return request;
 };

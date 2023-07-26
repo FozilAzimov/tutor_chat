@@ -12,6 +12,7 @@ import { NavLink, Outlet } from 'react-router-dom';
 import navbar from '../../utils/navbar';
 
 export default function Navbar () {
+
   return (
     <Wrapper>
       <Parent>
