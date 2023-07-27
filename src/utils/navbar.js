@@ -9,20 +9,22 @@ import liked from '../assets/icons/liked.svg';
 import acount from '../assets/icons/acount.svg';
 
 // Navbar components hidden: false;
-import Application from '../pages/Application';
-import Acount from '../pages/Acount';
-import Home from '../pages/Home';
-import Liked from '../pages/Liked';
-import Search from '../pages/Search';
+import ApplicationPage from '../pages/Application';
+import AcountPage from '../pages/Acount';
+import HomePage from '../pages/Home';
+import LikedPage from '../pages/Liked';
+import SearchPage from '../pages/Search';
+// Hidden true
+import LoginAcountPage from "../pages/LoginAcount";
+import MessagePage from "../pages/Message";
+import TelegramPage from "../pages/Telegram";
 
-// Navbar components hidden: true;
-import LoginAcount from "../components/LoginAcount";
 
 const navbar = [
   {
     id: useUniqeID,
     path: '/home',
-    element: <Home />,
+    element: <HomePage />,
     url: home,
     private: false,
     hidden: false,
@@ -30,7 +32,7 @@ const navbar = [
   {
     id: useUniqeID,
     path: '/search',
-    element: <Search />,
+    element: <SearchPage />,
     url: search,
     private: false,
     hidden: false,
@@ -38,7 +40,7 @@ const navbar = [
   {
     id: useUniqeID,
     path: '/application',
-    element: <Application />,
+    element: <ApplicationPage />,
     url: application,
     private: false,
     hidden: false,
@@ -46,7 +48,7 @@ const navbar = [
   {
     id: useUniqeID,
     path: '/liked',
-    element: <Liked />,
+    element: <LikedPage />,
     url: liked,
     private: false,
     hidden: false,
@@ -54,7 +56,7 @@ const navbar = [
   {
     id: useUniqeID,
     path: '/acount',
-    element: <Acount />,
+    element: <AcountPage />,
     url: acount,
     private: false,
     hidden: false,
@@ -62,7 +64,21 @@ const navbar = [
   {
     id: useUniqeID,
     path: '/loginacount',
-    element: <LoginAcount />,
+    element: <LoginAcountPage />,
+    private: false,
+    hidden: true,
+  },
+  {
+    id: useUniqeID,
+    path: '/message',
+    element: <MessagePage />,
+    private: false,
+    hidden: true,
+  },
+  {
+    id: useUniqeID,
+    path: '/telegram',
+    element: <TelegramPage />,
     private: false,
     hidden: true,
   },

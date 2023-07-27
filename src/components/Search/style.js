@@ -20,45 +20,6 @@ const Container = styled.div`
 padding: 0 27px;
 `
 
-const getType = ({ type }) => {
-  switch (type) {
-    case 'min': return '80px';
-    default: return '100%';
-  }
-}
-
-const BoxTitle = styled.div`
-display: flex;
-width:${getType};
-justify-content: space - between;
-align-items: center;
-`
-
-const getSize = ({ type }) => {
-  switch (type) {
-    case 'lg': return {
-      color: '#000',
-      fontSize: '25px',
-      fontWeight: '600',
-    };
-    case 'md': return {
-      color: '#000',
-      fontSize: '23px',
-      fontWeight: '400',
-      marginTop: '20px',
-    };
-    default: return {
-      color: '#000',
-      fontSize: '16px',
-      fontWeight: '400',
-    };
-  }
-}
-
-const Title = styled.div`
-${getSize}
-`
-
 const Box = styled.div`
 position: relative;
 margin-top: 15px;
@@ -117,8 +78,6 @@ const CategoryIcon = styled.img``;
 
 export {
   Wrapper,
-  BoxTitle,
-  Title,
   Icons,
   Container,
   Box,

@@ -6,6 +6,7 @@ import icon3 from '../../assets/icons/group.svg';
 
 import {
   Box,
+  BoxTitle,
   Category,
   CategoryIcon,
   CategoryWrap,
@@ -13,12 +14,13 @@ import {
   Icons,
   Input,
   Text,
+  Title,
   Wrapper
 } from './style';
 
 import Card from '../Card';
 
-export default function Search () {
+export default function Telegram () {
 
   const category = [
     { id: 1, name: 'User', url: icon1, mg: ' ' },

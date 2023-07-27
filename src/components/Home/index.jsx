@@ -20,15 +20,25 @@ import {
 } from './style';
 
 import Card from '../Card';
+import { useNavigate } from 'react-router-dom';
 
 export default function Home () {
+
+  const navigate = useNavigate();
 
   const category = [
     { id: 1, name: 'chemistry#', url: icon1, mg: ' ' },
     { id: 2, name: 'maths#', url: icon2, mg: ' ' },
     { id: 3, name: 'physics#', url: icon3, mg: ' ' },
     { id: 4, name: 'astronomy#', url: icon4, mg: '' },
-  ]
+  ];
+
+  const getMessage = () => {
+    navigate(`/message`);
+  }
+  const getTelegram = () => {
+    navigate(`/telegram`);
+  }
 
   return (
     <Wrapper>
@@ -36,8 +46,8 @@ export default function Home () {
         <BoxTitle>
           <Title type='lg'>Tutor Chat</Title>
           <BoxTitle type='min'>
-            <Icons.Message />
-            <Icons.Telegram />
+            <Icons.Message onClick={getMessage} />
+            <Icons.Telegram onClick={getTelegram} />
           </BoxTitle>
         </BoxTitle>
         <Title type='md'>Start Learning</Title>

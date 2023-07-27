@@ -21,8 +21,13 @@ width: 100%;
 
 const getType = ({ type }) => {
   switch (type) {
-    case 'checkbox': return '3px';
-    default: return '20px';
+    case 'checkbox': return {
+      marginTop: '3px',
+      cursor: 'pointer',
+    };
+    default: return {
+      marginTop: '20px',
+    };
   }
 }
 
@@ -30,7 +35,7 @@ const GenericInput = styled.input`
 @media(max-width: 576px){
   width: ${getWidth};
   padding: 14px 0;
-  margin-top: ${getType};
+  ${getType}
   font-size: 15px;
   font-weight: 500;
   font-family: 'Inter', sans-serif;
