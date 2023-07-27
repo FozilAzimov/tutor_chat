@@ -16,6 +16,7 @@ const LanguageIcon = styled(language)`
 const Wrapper = styled.div`
 @media(max-width: 576px){
   width: 100%;
+  padding: var(--paddingMin);
 }
 `
 

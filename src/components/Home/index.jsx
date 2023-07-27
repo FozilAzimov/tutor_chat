@@ -19,13 +19,15 @@ import {
   Wrapper
 } from './style';
 
+import Card from '../Card';
+
 export default function Home () {
 
   const category = [
-    { id: 1, name: 'chemistry#', url: icon1, mg: true },
-    { id: 2, name: 'maths#', url: icon2, mg: true },
-    { id: 3, name: 'physics#', url: icon3, mg: true },
-    { id: 4, name: 'astronomy#', url: icon4, mg: false },
+    { id: 1, name: 'chemistry#', url: icon1, mg: ' ' },
+    { id: 2, name: 'maths#', url: icon2, mg: ' ' },
+    { id: 3, name: 'physics#', url: icon3, mg: ' ' },
+    { id: 4, name: 'astronomy#', url: icon4, mg: '' },
   ]
 
   return (
@@ -56,6 +58,7 @@ export default function Home () {
           }
         </CategoryWrap>
       </Container>
+      <Card />
     </Wrapper>
   )
 }

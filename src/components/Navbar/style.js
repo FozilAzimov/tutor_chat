@@ -3,16 +3,17 @@ import { styled } from "styled-components";
 const Wrapper = styled.div`
 width: 100%;
 height: inherit;
-padding: var(--paddingMax);
 position: relative;
 display: flex;
 flex-direction: column;
 justify-content: space-between;
 display: none;
+@media(min-width: 577px){
+  padding: var(--paddingMax);
+}
 @media (max-width: 576px){
   width: 100%;
   height: inherit;
-  padding: var(--paddingMin);
   position: relative;
   display: flex;
   flex-direction: column;

@@ -20,7 +20,7 @@ margin-top: 25px;
 `
 
 const Container = styled.div`
-padding: 0 7px;
+padding: 0 27px;
 `
 
 const getType = ({ type }) => {
@@ -64,7 +64,7 @@ ${getSize}
 
 const Box = styled.div`
 position: relative;
-margin-top: 20px;
+margin-top: 15px;
 `;
 const Input = styled.input`
 width: 100%;
@@ -72,6 +72,7 @@ height: 44px;
 font-size: 14px;
 font-weight: 400;
 padding-left: 50px;
+box-shadow: 0px 5px 31px 0px #00000008;
 border: none;
 outline: none;
 ::placeholder{
