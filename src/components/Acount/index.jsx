@@ -12,9 +12,8 @@ import {
   Img
 } from './style';
 
-import { Button } from '../Generic';
+import { Button, Select } from '../Generic';
 import { useNavigate } from 'react-router-dom';
-import { Select } from 'antd';
 
 export default function Acount () {
 
@@ -22,7 +21,7 @@ export default function Acount () {
   const [cheked, setCheked] = useState('');
   const [check, setCheck] = useState('');
 
-  const Change = (value) => {
+  const Change = ({ target: { value } }) => {
     if (value === "uz" || value === "ru" || value === "en") {
       setCheked('primary');
       setCheck(value);
@@ -43,19 +42,7 @@ export default function Acount () {
         <LanguageIcon />
         <TitleText>Language</TitleText>
         <FonImgWrap>
-          <Select
-            defaultValue="Select Language"
-            style={{
-              width: '100%',
-            }}
-            listHeight={256}
-            listItemHeight={10}
-            onChange={Change}
-            options={[
-              { value: 'uz', label: 'Uzbek', },
-              { value: 'ru', label: 'Russia', },
-              { value: 'en', label: 'English', },
-            ]} className='select_change' />
+          <Select onChange={Change} />
           <FonImg>
             <Img src={img} />
           </FonImg>
@@ -69,3 +56,7 @@ export default function Acount () {
     </Wrapper>
   )
 }
+
+
+
+
