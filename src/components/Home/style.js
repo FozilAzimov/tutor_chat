@@ -16,7 +16,7 @@ transform: translateY(-40%);
 
 const Wrapper = styled.div`
 width: 100%;
-margin-top: 50px;
+margin-top: 25px;
 `
 
 const Container = styled.div`
@@ -48,7 +48,7 @@ const getSize = ({ type }) => {
       color: '#000',
       fontSize: '23px',
       fontWeight: '400',
-      marginTop: '40px',
+      marginTop: '20px',
     };
     default: return {
       color: '#000',
@@ -81,7 +81,7 @@ outline: none;
 
 const CategoryWrap = styled.div`
 display: flex;
-justify-content: center;
+justify-content: space-between;
 flex-wrap: wrap;
 align-items: center;
 `
@@ -96,6 +96,9 @@ justify-content: space-between;
 align-items: center;
 margin-right: ${({ mg }) => mg ? '10px' : '0'};
 margin-top: 20px;
+:hover{
+  cursor: pointer;
+}
 `
 
 const Text = styled.span`

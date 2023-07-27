@@ -20,13 +20,11 @@ import titleImg from '../../assets/imgs/login_icon.jpg';
 
 import { Button, Input } from '../Generic';
 import { useNavigate } from 'react-router-dom';
-import { message } from 'antd';
 
 export default function LoginAcount () {
 
   const navigate = useNavigate();
   const [body, setBody] = useState({});
-  const [, setError] = useState(false);
   const [type, setType] = useState('password');
   const [isHidden, setIsHidden] = useState(true);
   const [email, setEmail] = useState('');
@@ -58,14 +56,6 @@ export default function LoginAcount () {
       ...body,
       [name]: value,
     })
-    setError(false);
-  }
-
-  const info = () => {
-    message.info('Tabriklaymiz! Siz ro`yxatdan o`tdingiz.');
-  }
-  const warning = () => {
-    message.warning('Email yoki Password xato, iltimos qayta urinib ko`ring.');
   }
 
   const getSubmit = () => {
@@ -80,10 +70,8 @@ export default function LoginAcount () {
       .then(res => {
         if (res?.token) {
           localStorage.setItem('token', res?.token);
-          info();
           navigate(`/home`);
         }
-        else warning();
       });
   }
 

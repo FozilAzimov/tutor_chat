@@ -45,6 +45,7 @@ const TitleText = styled.div`
 const FonImgWrap = styled.div`
 @media(max-width: 576px){
   position: relative;
+  margin-top: 60px;
 }
 
 `
@@ -54,7 +55,7 @@ const FonImg = styled.div`
   width: 274px;
   height: 258px;
   position: absolute;
-  top: 40px;
+  top: -35px;
   left: 50%;
   transform: translateX(-50%);
   z-index: -1;

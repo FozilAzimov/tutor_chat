@@ -12,8 +12,9 @@ import {
   Img
 } from './style';
 
-import { Button, Select } from '../Generic';
+import { Button } from '../Generic';
 import { useNavigate } from 'react-router-dom';
+import { Select } from 'antd';
 
 export default function Acount () {
 
@@ -21,11 +22,7 @@ export default function Acount () {
   const [cheked, setCheked] = useState('');
   const [check, setCheck] = useState('');
 
-  const Click = () => {
-    navigate('/loginacount');
-  }
-
-  const Change = ({ target: { value } }) => {
+  const Change = (value) => {
     if (value === "uz" || value === "ru" || value === "en") {
       setCheked('primary');
       setCheck(value);
@@ -35,13 +32,28 @@ export default function Acount () {
     }
   }
 
+  const Click = () => {
+    navigate('/loginacount');
+  }
+
+
   return (
     <Wrapper>
       <Title>
         <LanguageIcon />
         <TitleText>Language</TitleText>
         <FonImgWrap>
-          <Select onChange={Change} />
+          <Select
+            defaultValue="Select Language"
+            style={{
+              width: '100%',
+            }}
+            onChange={Change}
+            options={[
+              { value: 'uz', label: 'Uzbek', },
+              { value: 'ru', label: 'Russia', },
+              { value: 'en', label: 'English', },
+            ]} />
           <FonImg>
             <Img src={img} />
           </FonImg>
