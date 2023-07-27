@@ -27,14 +27,14 @@ export default function Acount () {
       setCheck(value);
     }
     else {
-      setCheked();
+      setCheked('');
+      setCheck(value);
     }
   }
 
   const Click = () => {
     navigate('/loginacount');
   }
-
 
   return (
     <Wrapper>

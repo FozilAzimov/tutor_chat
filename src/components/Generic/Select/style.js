@@ -8,6 +8,7 @@ right: 10px;
 top: 50%;
 transform: translateY(-50%);
 cursor: pointer;
+width: 10px;
 `;
 
 const Wrap = styled.div`
@@ -24,7 +25,7 @@ appearance: none;
 -moz-appearance: none;
 width: 100%;
 color: #969696;
-padding: 15px 10px;
+padding: 16px 15px;
 outline: none;
 cursor: pointer;
 background: #F5F5F5;
