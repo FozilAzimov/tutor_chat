@@ -47,8 +47,10 @@ const FonImgWrap = styled.div`
 @media(max-width: 576px){
   position: relative;
   margin-top: 60px;
+  .select_change{
+    height: 50px !important;
+  }
 }
-
 `
 
 const FonImg = styled.div`

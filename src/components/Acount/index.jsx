@@ -48,12 +48,14 @@ export default function Acount () {
             style={{
               width: '100%',
             }}
+            listHeight={256}
+            listItemHeight={10}
             onChange={Change}
             options={[
               { value: 'uz', label: 'Uzbek', },
               { value: 'ru', label: 'Russia', },
               { value: 'en', label: 'English', },
-            ]} />
+            ]} className='select_change' />
           <FonImg>
             <Img src={img} />
           </FonImg>
