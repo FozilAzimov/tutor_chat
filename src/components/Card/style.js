@@ -10,11 +10,15 @@ width: 35px;
 height: 35px;
 border-radius: 50%;
 background: #E5F0FF;
+cursor: pointer;
 `;
 Icons.Leavel = styled(leavel)`
 margin-right: 5px;
+cursor: pointer;
 `;
-Icons.Rectangle = styled(card_rectangle)``;
+Icons.Rectangle = styled(card_rectangle)`
+cursor: pointer;
+`;
 
 const Wrapper = styled.div`
 width: 100%;
@@ -68,16 +72,41 @@ width: 100%;
 const CardTitle = styled.div`
 position: relative;
 margin-bottom: 23px;
+:active{
+  background: #2b6ebf;
+}
 `;
+
+const getPosition = ({ center }) => {
+  switch (center) {
+    case 'center': return {
+      justifyContent: 'center',
+      borderRadius: '10px',
+      left: '50%',
+      transform: 'translateX(-50%)',
+      padding: '8px 10px'
+    };
+    case 'start': return {
+      justifyContent: 'start',
+    };
+    default: return 'end';
+  }
+}
 
 const CardMessage = styled.div`
 position: absolute;
-top: -17px;
-width: 100%;
+top: -18px;
+width: ${({ width }) => {
+    if (width.includes('100%')) return '100%';
+    else if (!width) return '0';
+    else return `${width}`;
+  }};
 height: 34px;
 background: #4586D6;
 display: flex;
 align-items: center;
+${getPosition};
+cursor: pointer;
 `;
 
 const getLiked = ({ type }) => {

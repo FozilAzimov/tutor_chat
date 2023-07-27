@@ -1,12 +1,9 @@
 import { styled } from "styled-components";
 
-import { ReactComponent as message } from "../../assets/icons/home_message.svg";
-import { ReactComponent as telegram } from "../../assets/icons/tg_message.svg";
 import { ReactComponent as search } from "../../assets/icons/home_search.svg";
 
 const Icons = styled.div``;
-Icons.Message = styled(message)``;
-Icons.Telegram = styled(telegram)``;
+
 Icons.Search = styled(search)`
 position: absolute;
 left: 20px;
@@ -33,7 +30,7 @@ const getType = ({ type }) => {
 const BoxTitle = styled.div`
 display: flex;
 width:${getType};
-justify-content: space-between;
+justify-content: space - between;
 align-items: center;
 `
 
@@ -86,7 +83,7 @@ justify-content: space-between;
 flex-wrap: wrap;
 align-items: center;
 :active{
-  background:  #DDEBFF;
+  background: #DDEBFF;
 }
 :hover{
   cursor: pointer;
@@ -104,7 +101,6 @@ justify-content: space-between;
 align-items: center;
 margin-right: ${({ mg }) => mg ? '10px' : '0'};
 margin-top: 20px;
-
 `
 
 const Text = styled.span`

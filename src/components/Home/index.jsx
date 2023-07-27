@@ -49,7 +49,7 @@ export default function Home () {
           {
             category.map(({ id, name, url, mg }) => {
               return (
-                <Category key={id} mg={mg}>
+                <Category mg={mg} key={id}>
                   <CategoryIcon src={url} />
                   <Text>{name}</Text>
                 </Category>
@@ -58,7 +58,7 @@ export default function Home () {
           }
         </CategoryWrap>
       </Container>
-      <Card />
-    </Wrapper>
+      <Card Text='Send message' width='100%' center='start' />
+    </Wrapper >
   )
 }

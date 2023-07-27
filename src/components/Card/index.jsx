@@ -15,7 +15,7 @@ import {
   Input,
 } from './style';
 
-export default function Card () {
+export default function Card ({ Text, width, center }) {
 
   return (
     <Wrapper>
@@ -25,9 +25,9 @@ export default function Card () {
       </UserName>
       <CardImg src={card_img} />
       <CardTitle>
-        <CardMessage>
+        <CardMessage width={width} center={center}>
           <Container>
-            <UserText type='lg'>Send message</UserText>
+            <UserText type='lg'>{Text}</UserText>
           </Container>
         </CardMessage>
       </CardTitle>

@@ -23,7 +23,7 @@ export default function Navbar () {
           {
             navbar.map(({ url, path, hidden }, index) => {
               return !hidden && (
-                <NavLink key={index} to={path}>
+                <NavLink key={index} to={path} >
                   <NavImg src={url} />
                 </NavLink>
               )
