@@ -6,7 +6,6 @@ import icon3 from '../../assets/icons/group.svg';
 
 import {
   Box,
-  BoxTitle,
   Category,
   CategoryIcon,
   CategoryWrap,
@@ -14,7 +13,6 @@ import {
   Icons,
   Input,
   Text,
-  Title,
   Wrapper
 } from './style';
 
