@@ -2,6 +2,7 @@ import React from 'react';
 
 import {
   Container,
+  IconWrap,
   Icons,
   Link,
   MessageBox,
@@ -9,6 +10,7 @@ import {
   Messages,
   Title,
   TitleWrapper,
+  WrapLink,
   Wrapper
 } from './style';
 
@@ -27,7 +29,15 @@ export default function Message () {
       id: 2,
       month: 'May',
       day: 7,
-      time: '19:07',
+      time: '19:10',
+      title: 'My name is Catherine. I like dancing',
+      description: 'Lorem Ipsum is simply dummy text of the....',
+    },
+    {
+      id: 3,
+      month: 'May',
+      day: 7,
+      time: '19:15',
       title: 'My name is Catherine. I like dancing',
       description: 'Lorem Ipsum is simply dummy text of the....',
     },
@@ -37,7 +47,9 @@ export default function Message () {
     <Wrapper>
       <Container>
         <TitleWrapper type='top'>
-          <Icons.Arrow />
+          <IconWrap>
+            <Icons.Arrow />
+          </IconWrap>
           <Title>Message</Title>
         </TitleWrapper>
         {
@@ -60,7 +72,9 @@ export default function Message () {
             )
           })
         }
-        <Link>Mark as read</Link>
+        <WrapLink>
+          <Link>Mark as read</Link>
+        </WrapLink>
       </Container>
     </Wrapper>
   )
