@@ -12,6 +12,8 @@ import {
   CategoryIcon,
   CategoryWrap,
   Container,
+  Count,
+  IconWrap,
   Icons,
   Input,
   Text,
@@ -46,8 +48,14 @@ export default function Home () {
         <BoxTitle>
           <Title type='lg'>Tutor Chat</Title>
           <BoxTitle type='min'>
-            <Icons.Message onClick={getMessage} />
-            <Icons.Telegram onClick={getTelegram} />
+            <IconWrap>
+              <Count>0</Count>
+              <Icons.Message onClick={getMessage} />
+            </IconWrap>
+            <IconWrap>
+              <Count>0</Count>
+              <Icons.Telegram onClick={getTelegram} />
+            </IconWrap>
           </BoxTitle>
         </BoxTitle>
         <Title type='md'>Start Learning</Title>

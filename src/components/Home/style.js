@@ -7,9 +7,13 @@ import { ReactComponent as search } from "../../assets/icons/home_search.svg";
 const Icons = styled.div``;
 Icons.Message = styled(message)`
 cursor: pointer;
+width: 30px;
+height: 30px;
 `;
 Icons.Telegram = styled(telegram)`
 cursor: pointer;
+width: 30px;
+height: 30px;
 `;
 Icons.Search = styled(search)`
 position: absolute;
@@ -29,7 +33,7 @@ padding: 0 27px;
 
 const getType = ({ type }) => {
   switch (type) {
-    case 'min': return '80px';
+    case 'min': return '90px';
     default: return '100%';
   }
 }
@@ -64,6 +68,26 @@ const getSize = ({ type }) => {
 
 const Title = styled.div`
 ${getSize}
+`
+
+const IconWrap = styled.div`
+position: relative;
+`
+const Count = styled.div`
+position: absolute;
+width: 15px;
+height: 15px;
+border-radius: 50%;
+background: red;
+right: -3px;
+top: -4px;
+color: #fff;
+font-size: 10px;
+display: flex;
+justify-content: center;
+align-items: center;
+font-family: 'Inter', sans-serif;
+font-weight: 600;
 `
 
 const Box = styled.div`
@@ -126,6 +150,8 @@ const CategoryIcon = styled.img``;
 export {
   Wrapper,
   BoxTitle,
+  IconWrap,
+  Count,
   Title,
   Icons,
   Container,

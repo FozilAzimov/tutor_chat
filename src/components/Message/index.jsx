@@ -1,54 +1,67 @@
 import React from 'react';
 
-import icon1 from '../../assets/icons/user_icon.svg';
-import icon2 from '../../assets/icons/video.svg';
-import icon3 from '../../assets/icons/group.svg';
-
 import {
-  Box,
-  Category,
-  CategoryIcon,
-  CategoryWrap,
   Container,
   Icons,
-  Input,
-  Text,
+  Link,
+  MessageBox,
+  MessageContent,
+  Messages,
+  Title,
+  TitleWrapper,
   Wrapper
 } from './style';
 
-import Card from '../Card';
-
 export default function Message () {
 
-  const category = [
-    { id: 1, name: 'User', url: icon1, mg: ' ' },
-    { id: 2, name: 'Video', url: icon2, mg: ' ' },
-    { id: 3, name: 'Group', url: icon3, mg: '' },
+  const data = [
+    {
+      id: 1,
+      month: 'May',
+      day: 7,
+      time: '19:07',
+      title: 'My name is Catherine. I like dancing',
+      description: 'Lorem Ipsum is simply dummy text of the....',
+    },
+    {
+      id: 2,
+      month: 'May',
+      day: 7,
+      time: '19:07',
+      title: 'My name is Catherine. I like dancing',
+      description: 'Lorem Ipsum is simply dummy text of the....',
+    },
   ]
 
   return (
     <Wrapper>
       <Container>
-        <Box>
-          <Icons.Search />
-          <Input type='text' placeholder='Matematika' />
-        </Box>
-        <CategoryWrap>
-          {
-            category.map(({ id, name, url, mg }) => {
-              return (
-                <Category
-                  key={id}
-                  mg={mg}>
-                  <CategoryIcon src={url} />
-                  <Text>{name}</Text>
-                </Category>
-              )
-            })
-          }
-        </CategoryWrap>
+        <TitleWrapper type='top'>
+          <Icons.Arrow />
+          <Title>Message</Title>
+        </TitleWrapper>
+        {
+          data.map(({
+            id,
+            month,
+            day,
+            time,
+            title,
+            description
+          }) => {
+            return (
+              <MessageBox key={id}>
+                <TitleWrapper>{month} {day}, {time}</TitleWrapper>
+                <MessageContent>
+                  <Messages type='bold'>{title}</Messages>
+                  <Messages>{description}</Messages>
+                </MessageContent>
+              </MessageBox>
+            )
+          })
+        }
+        <Link>Mark as read</Link>
       </Container>
-      <Card Text='Matematika' width='fit-content' center='center' />
     </Wrapper>
   )
 }

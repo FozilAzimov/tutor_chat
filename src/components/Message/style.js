@@ -1,14 +1,13 @@
 import { styled } from "styled-components";
 
-import { ReactComponent as search } from "../../assets/icons/home_search.svg";
+import { ReactComponent as arrow } from "../../assets/icons/arrow_prewiev.svg";
 
 const Icons = styled.div``;
 
-Icons.Search = styled(search)`
-position: absolute;
-left: 20px;
-top: 50%;
-transform: translateY(-40%);
+Icons.Arrow = styled(arrow)`
+width: 20px;
+height: 20px;
+cursor: pointer;
 `;
 
 const Wrapper = styled.div`
@@ -20,58 +19,77 @@ const Container = styled.div`
 padding: 0 27px;
 `
 
-const Box = styled.div`
-position: relative;
-margin-top: 15px;
-`;
-const Input = styled.input`
+const getMargin = ({ type }) => {
+  switch (type) {
+    case 'top': return '80px';
+    default: return '0';
+  }
+}
+
+const TitleWrapper = styled.div`
+display: flex;
+align-items: center;
+margin-bottom: ${getMargin};
+`
+
+const Title = styled.div`
+text-align: center;
 width: 100%;
-height: 44px;
-font-size: 14px;
+font-size: 20px;
+font-weight: 500;
+font-family: 'Inter', sans-serif;
+`
+
+const MessageBox = styled.div`
+width: 100%;
+font-size: 20px;
+font-weight: 500;
+font-family: 'Inter', sans-serif;
+display: flex;
+flex-direction: column;
+align-items: center;
+font-size: 12px;
 font-weight: 400;
-padding-left: 50px;
-box-shadow: 0px 5px 31px 0px #00000008;
-border: none;
-outline: none;
-::placeholder{
-  color: #9A9A9A;
-}
+color: #8C8C8C;
 `
 
-const CategoryWrap = styled.div`
-display: flex;
-justify-content: space-between;
-flex-wrap: wrap;
-align-items: center;
-:active{
-  background: #DDEBFF;
-}
-:hover{
-  cursor: pointer;
-}
+const MessageContent = styled.div`
+width: 100%;
+padding: 10px 15px;
+margin: 15px auto 50px auto;
+box-shadow: 0px 4px 4px 0px #00000040;
+border-radius: 10px;
 `
 
-const Category = styled.div`
-text-decoration: none;
-width: fit-content;
-padding: 8px 10px;
-background: #F4F4F4;
-border-radius: 11px;
-display: flex;
-justify-content: space-between;
-align-items: center;
-margin-right: ${({ mg }) => mg ? '10px' : '0'};
+const getType = ({ type }) => {
+  switch (type) {
+    case 'bold': return {
+      fontSize: '13px',
+      fontWeight: '600',
+      color: '#323232',
+      marginBottom: '10px'
+    };
+    default: return {
+      fontSize: '15px',
+      fontWeight: '300',
+      color: '#000'
+    }
+  }
+}
+
+const Messages = styled.div`
+${getType}
+`
+
+const Link = styled.div`
+width: 100%;
+text-align: center;
+color: #347AE2;
+font-size: 16px;
+font-weight: 400;
 margin-top: 20px;
+cursor: pointer;
 `
-
-const Text = styled.span`
-font-size: 14px;
-font-weight: 400;
-color: #5F5F5F;
-margin-left: 5px;
-`
-
-const CategoryIcon = styled.img``;
 
 
 
@@ -80,10 +98,10 @@ export {
   Wrapper,
   Icons,
   Container,
-  Box,
-  Input,
-  CategoryWrap,
-  Category,
-  Text,
-  CategoryIcon,
+  TitleWrapper,
+  Title,
+  MessageBox,
+  MessageContent,
+  Messages,
+  Link
 }
