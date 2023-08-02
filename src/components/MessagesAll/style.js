@@ -58,57 +58,73 @@ font-family: 'Inter', sans-serif;
 const MessageBox = styled.div`
 width: 100%;
 font-size: 20px;
+font-weight: 500;
 font-family: 'Inter', sans-serif;
 display: flex;
 flex-direction: column;
-align-items: start;
-border-radius: 5px;
-box-shadow: 0px 4px 4px 0px #00000040;
-margin-bottom: 15px;
+align-items: center;
+font-size: 12px;
+font-weight: 400;
+color: #8C8C8C;
 `
 
-const MessageVideo = styled.img`
+const MessageContent = styled.div`
 width: 100%;
+padding: 10px 15px;
+margin: 12px auto 40px auto;
+box-shadow: 0px 4px 4px 0px #00000040;
+border-radius: 10px;
+cursor: pointer;
 `
 
-const getTitle = ({ type }) => {
+const getType = ({ type }) => {
   switch (type) {
-    case 'large': return {
-      fontWeight: '700',
+    case 'bold': return {
+      fontSize: '13px',
+      fontWeight: '600',
       color: '#323232',
-      padding: '15px 30px 0px 8px',
-    }
-    case 'medium': return {
-      fontWeight: '400',
-      color: '#0A0A0A',
-      padding: '15px 40px 50px 8px',
-    }
+      marginBottom: '10px'
+    };
     default: return {
-      width: '100%',
-      textAlign: 'right',
-      fontWeight: '400',
-      color: '#9A9A9A',
-      padding: '0px 20px 20px 0px',
+      fontSize: '15px',
+      fontWeight: '300',
+      color: '#000'
     }
   }
 }
 
-const MessageTitle = styled.div`
-font-size: 13px;
-${getTitle}
+const Messages = styled.div`
+${getType}
 `
 
+const Link = styled.div`
+width: fit-content;
+color: #347AE2;
+font-size: 16px;
+font-weight: 400;
+margin-top: 20px;
+cursor: pointer;
+`
 
+const WrapLink = styled.div`
+display: flex;
+justify-content: center;
+:hover{
+  color: #0a59d0;
+}
+`;
 
 
 export {
-  Container,
-  IconWrap,
-  Icons,
-  MessageBox,
-  Title,
-  TitleWrapper,
   Wrapper,
-  MessageVideo,
-  MessageTitle
+  Icons,
+  IconWrap,
+  Container,
+  TitleWrapper,
+  Title,
+  MessageBox,
+  MessageContent,
+  Messages,
+  Link,
+  WrapLink
 }

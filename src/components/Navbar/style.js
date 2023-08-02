@@ -47,10 +47,16 @@ const NavbarWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 30px;
+  padding: 10px 20px;
+  .NavLink{
+    padding: 10px;
+  }
 }
 @media(max-width: 350px){
-    padding: 15px 20px;
+  padding: 8px 10px;
+  .NavLink{
+    padding: 8px;
+  }
 }
 `
 

@@ -16,8 +16,9 @@ import LikedPage from '../pages/Liked';
 import SearchPage from '../pages/Search';
 // Hidden true
 import LoginAcountPage from "../pages/LoginAcount";
-import MessagePage from "../pages/Message";
+import MessagesAllPage from "../pages/MessagesAll"
 import TelegramPage from "../pages/Telegram";
+import MessagePage from "../pages/Message";
 
 
 const navbar = [
@@ -70,8 +71,8 @@ const navbar = [
   },
   {
     id: useUniqeID,
-    path: '/message',
-    element: <MessagePage />,
+    path: '/messages',
+    element: <MessagesAllPage />,
     private: false,
     hidden: true,
   },
@@ -79,6 +80,13 @@ const navbar = [
     id: useUniqeID,
     path: '/telegram',
     element: <TelegramPage />,
+    private: false,
+    hidden: true,
+  },
+  {
+    id: useUniqeID,
+    path: '/message',
+    element: <MessagePage />,
     private: false,
     hidden: true,
   },

@@ -1,9 +1,12 @@
-import LanguagePovider from "./Language";
+import LanguagePovider from "./language";
+import HomePovider from "./HomeContext";
 
 const RootContext = ({ children }) => {
   return (
     <LanguagePovider>
-      {children}
+      <HomePovider>
+        {children}
+      </HomePovider>
     </LanguagePovider>
   )
 }

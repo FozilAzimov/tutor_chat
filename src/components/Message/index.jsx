@@ -4,77 +4,68 @@ import {
   Container,
   IconWrap,
   Icons,
-  Link,
   MessageBox,
-  MessageContent,
-  Messages,
+  MessageTitle,
+  MessageVideo,
   Title,
   TitleWrapper,
-  WrapLink,
   Wrapper
 } from './style';
 
+import { useNavigate } from 'react-router-dom';
+
+import img from '../../assets/imgs/video.svg'
+
 export default function Message () {
+
+  const navigate = useNavigate();
 
   const data = [
     {
       id: 1,
-      month: 'May',
-      day: 7,
-      time: '19:07',
-      title: 'My name is Catherine. I like dancing',
-      description: 'Lorem Ipsum is simply dummy text of the....',
+      date: '26.05.2023',
+      title: 'My name is Catherine. I like dancing in the rain and travelling',
+      description: 'My name is Catherine. I like dancing in the rain and travelling all around the world. My name is Catherine. I like dancing in the rain and travelling all around the world.My name is Catherine. I like dancing in the rain and travelling all around the world.',
     },
     {
       id: 2,
-      month: 'May',
-      day: 7,
-      time: '19:10',
-      title: 'My name is Catherine. I like dancing',
-      description: 'Lorem Ipsum is simply dummy text of the....',
+      date: '26.05.2023',
+      title: 'My name is Catherine. I like dancing in the rain and travelling',
+      description: 'My name is Catherine. I like dancing in the rain and travelling all around the world. My name is Catherine. I like dancing in the rain and travelling all around the world.My name is Catherine. I like dancing in the rain and travelling all around the world.',
     },
-    {
-      id: 3,
-      month: 'May',
-      day: 7,
-      time: '19:15',
-      title: 'My name is Catherine. I like dancing',
-      description: 'Lorem Ipsum is simply dummy text of the....',
-    },
-  ]
-
+  ];
   return (
     <Wrapper>
       <Container>
         <TitleWrapper type='top'>
           <IconWrap>
-            <Icons.Arrow />
+            <Icons.Arrow onClick={() => navigate(-1)} />
           </IconWrap>
           <Title>Message</Title>
         </TitleWrapper>
         {
           data.map(({
             id,
-            month,
-            day,
-            time,
+            date,
             title,
-            description
+            description,
           }) => {
             return (
               <MessageBox key={id}>
-                <TitleWrapper>{month} {day}, {time}</TitleWrapper>
-                <MessageContent>
-                  <Messages type='bold'>{title}</Messages>
-                  <Messages>{description}</Messages>
-                </MessageContent>
+                <MessageVideo src={img} />
+                <MessageTitle type='large'>
+                  {title}
+                </MessageTitle>
+                <MessageTitle type='medium'>
+                  {description}
+                </MessageTitle>
+                <MessageTitle >
+                  {date}
+                </MessageTitle>
               </MessageBox>
             )
           })
         }
-        <WrapLink>
-          <Link>Mark as read</Link>
-        </WrapLink>
       </Container>
     </Wrapper>
   )

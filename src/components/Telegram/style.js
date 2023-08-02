@@ -1,14 +1,14 @@
 import { styled } from "styled-components";
 
-import { ReactComponent as search } from "../../assets/icons/home_search.svg";
+import { ReactComponent as search } from "../../assets/icons/tg_search.svg";
 
 const Icons = styled.div``;
 
 Icons.Search = styled(search)`
 position: absolute;
-left: 20px;
+left: 18px;
 top: 50%;
-transform: translateY(-40%);
+transform: translateY(-50%);
 `;
 
 const Wrapper = styled.div`
@@ -30,11 +30,12 @@ height: 44px;
 font-size: 14px;
 font-weight: 400;
 padding-left: 50px;
-box-shadow: 0px 5px 31px 0px #00000008;
 border: none;
 outline: none;
+border-radius: 12px;
+background: #F8FBFF;
 ::placeholder{
-  color: #9A9A9A;
+  color: #96A0B5;
 }
 `
 
@@ -43,6 +44,7 @@ display: flex;
 justify-content: space-between;
 flex-wrap: wrap;
 align-items: center;
+margin-bottom: 30px;
 :active{
   background: #DDEBFF;
 }
@@ -54,8 +56,8 @@ align-items: center;
 const Category = styled.div`
 text-decoration: none;
 width: fit-content;
-padding: 8px 10px;
-background: #F4F4F4;
+padding: 8px 5px;
+background: #F8FBFF;
 border-radius: 11px;
 display: flex;
 justify-content: space-between;
@@ -65,13 +67,78 @@ margin-top: 20px;
 `
 
 const Text = styled.span`
-font-size: 14px;
-font-weight: 400;
-color: #5F5F5F;
-margin-left: 5px;
+width: 100px;
+font-size: 12px;
+font-weight: 700;
+color: #292C38;
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 0;
 `
 
-const CategoryIcon = styled.img``;
+const Content = styled.div`
+width: 100%;
+padding: 20px 60px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+background: rgba(236, 239, 244, .1);
+cursor: pointer;
+border-top: 1px solid rgb(236, 239, 244);
+`
+
+const UserImg = styled.img`
+cursor: pointer;
+`;
+
+const getBox = ({ type }) => {
+  switch (type) {
+    case 'max': return {
+      width: '100%',
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      paddingLeft: '20px'
+    };
+    case 'min': return {
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'start',
+    };
+    default: return {
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'end',
+    };
+  }
+}
+const getType = ({ type }) => {
+  switch (type) {
+    case 'bold': return {
+      fontSize: '14px',
+      fontWeight: '700',
+    };
+    default: return {
+      fontSize: '12px',
+      fontWeight: '500',
+    };
+  }
+}
+
+const ContentBox = styled.div`
+${getBox};
+`
+
+const ContentText = styled.div`
+width: fit-content;
+color: #292C38;
+${getType};
+padding-bottom: 8px;
+`
+
 
 
 
@@ -85,5 +152,8 @@ export {
   CategoryWrap,
   Category,
   Text,
-  CategoryIcon,
+  Content,
+  UserImg,
+  ContentBox,
+  ContentText
 }

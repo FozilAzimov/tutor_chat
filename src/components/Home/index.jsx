@@ -23,10 +23,14 @@ import {
 
 import Card from '../Card';
 import { useNavigate } from 'react-router-dom';
+import { HomeContext } from '../../context/HomeContext';
 
 export default function Home () {
 
   const navigate = useNavigate();
+  const [state, dispatch] = HomeContext();
+
+  console.log(state);
 
   const category = [
     { id: 1, name: 'chemistry#', url: icon1, mg: ' ' },
@@ -35,8 +39,8 @@ export default function Home () {
     { id: 4, name: 'astronomy#', url: icon4, mg: '' },
   ];
 
-  const getMessage = () => {
-    navigate(`/message`);
+  const getMessages = () => {
+    navigate(`/messages`);
   }
   const getTelegram = () => {
     navigate(`/telegram`);
@@ -50,7 +54,7 @@ export default function Home () {
           <BoxTitle type='min'>
             <IconWrap>
               <Count>0</Count>
-              <Icons.Message onClick={getMessage} />
+              <Icons.Message onClick={getMessages} />
             </IconWrap>
             <IconWrap>
               <Count>0</Count>
