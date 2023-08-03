@@ -23,12 +23,15 @@ import {
 
 import Card from '../Card';
 import { useNavigate } from 'react-router-dom';
-import { HomeContext } from '../../context/HomeContext';
+import { MessagesContext } from '../../context/MessageAll';
+import { TelegramContext } from '../../context/Telegram';
 
 export default function Home () {
 
   const navigate = useNavigate();
-  const [state, dispatch] = HomeContext();
+  const [messages] = MessagesContext();
+  const [post] = TelegramContext();
+
 
   const category = [
     { id: 1, name: 'chemistry#', url: icon1, mg: ' ' },
@@ -51,11 +54,11 @@ export default function Home () {
           <Title type='lg'>Tutor Chat</Title>
           <BoxTitle type='min'>
             <IconWrap>
-              <Count>0</Count>
+              <Count>{messages?.length}</Count>
               <Icons.Message onClick={getMessages} />
             </IconWrap>
             <IconWrap>
-              <Count>0</Count>
+              <Count>{post?.length}</Count>
               <Icons.Telegram onClick={getTelegram} />
             </IconWrap>
           </BoxTitle>

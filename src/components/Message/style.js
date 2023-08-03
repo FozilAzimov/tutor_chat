@@ -26,12 +26,16 @@ padding: 10px;
 `;
 
 const Wrapper = styled.div`
+@media(max-width: 576px){
 width: 100%;
 margin-top: 25px;
+}
 `
 
 const Container = styled.div`
+@media(max-width: 576px){
 padding: 0 27px;
+}
 `
 
 const getMargin = ({ type }) => {
@@ -42,20 +46,25 @@ const getMargin = ({ type }) => {
 }
 
 const TitleWrapper = styled.div`
+@media(max-width: 576px){
 display: flex;
 align-items: center;
 margin-bottom: ${getMargin};
+}
 `
 
 const Title = styled.div`
+@media(max-width: 576px){
 text-align: center;
 width: 100%;
 font-size: 20px;
 font-weight: 500;
 font-family: 'Inter', sans-serif;
+}
 `
 
 const MessageBox = styled.div`
+@media(max-width: 576px){
 width: 100%;
 font-size: 20px;
 font-family: 'Inter', sans-serif;
@@ -65,10 +74,13 @@ align-items: start;
 border-radius: 5px;
 box-shadow: 0px 4px 4px 0px #00000040;
 margin-bottom: 15px;
+}
 `
 
 const MessageVideo = styled.img`
+@media(max-width: 576px){
 width: 100%;
+}
 `
 
 const getTitle = ({ type }) => {
@@ -94,8 +106,10 @@ const getTitle = ({ type }) => {
 }
 
 const MessageTitle = styled.div`
+@media(max-width: 576px){
 font-size: 13px;
 ${getTitle}
+}
 `
 
 

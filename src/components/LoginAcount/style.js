@@ -136,27 +136,33 @@ const Check = styled.div`
 `
 
 const SpanText = styled.span`
+@media(max-width: 576px){
 display: flex;
 justify-content: center;
 align-items: center;
 font-size: 12px;
 font-weight: 300;
 margin-top: 40px;
+}
 `
 
 const Link = styled.div`
+@media(max-width: 576px){
 color: var(--textPrimaryColor);
 cursor: pointer;
 margin: 0 5px;
+}
 `
 
 const FooterBtn = styled.div`
+@media(max-width: 576px){
 width: 50px;
 color: #555;
 font-size: 12px;
 font-weight: 700;
 text-decoration: underline;
 cursor: pointer;
+}
 `
 
 

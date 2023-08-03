@@ -1,13 +1,14 @@
-import LanguagePovider from "./language";
-import HomePovider from "./HomeContext";
+import MessagesPovider from "./MessageAll";
+import TelegramPovider from "./Telegram";
+
 
 const RootContext = ({ children }) => {
   return (
-    <LanguagePovider>
-      <HomePovider>
+    <MessagesPovider>
+      <TelegramPovider>
         {children}
-      </HomePovider>
-    </LanguagePovider>
+      </TelegramPovider>
+    </MessagesPovider>
   )
 }
 

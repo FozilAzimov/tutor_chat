@@ -15,6 +15,7 @@ const IconWrap = styled.div`
 `;
 
 Icons.Arrow = styled(arrow)`
+@media(max-width: 576px){
 width: 40px;
 height: 40px;
 cursor: pointer;
@@ -23,15 +24,20 @@ display: flex;
 justify-content: center;
 align-items: center;
 padding: 10px;
+}
 `;
 
 const Wrapper = styled.div`
+@media(max-width: 576px){
 width: 100%;
 margin-top: 25px;
+}
 `
 
 const Container = styled.div`
+@media(max-width: 576px){
 padding: 0 27px;
+}
 `
 
 const getMargin = ({ type }) => {
@@ -42,20 +48,25 @@ const getMargin = ({ type }) => {
 }
 
 const TitleWrapper = styled.div`
+@media(max-width: 576px){
 display: flex;
 align-items: center;
 margin-bottom: ${getMargin};
+}
 `
 
 const Title = styled.div`
+@media(max-width: 576px){
 text-align: center;
 width: 100%;
 font-size: 20px;
 font-weight: 500;
 font-family: 'Inter', sans-serif;
+}
 `
 
 const MessageBox = styled.div`
+@media(max-width: 576px){
 width: 100%;
 font-size: 20px;
 font-weight: 500;
@@ -66,15 +77,18 @@ align-items: center;
 font-size: 12px;
 font-weight: 400;
 color: #8C8C8C;
+}
 `
 
 const MessageContent = styled.div`
+@media(max-width: 576px){
 width: 100%;
 padding: 10px 15px;
 margin: 12px auto 40px auto;
 box-shadow: 0px 4px 4px 0px #00000040;
 border-radius: 10px;
 cursor: pointer;
+}
 `
 
 const getType = ({ type }) => {
@@ -94,23 +108,29 @@ const getType = ({ type }) => {
 }
 
 const Messages = styled.div`
+@media(max-width: 576px){
 ${getType}
+}
 `
 
 const Link = styled.div`
+@media(max-width: 576px){
 width: fit-content;
 color: #347AE2;
 font-size: 16px;
 font-weight: 400;
 margin-top: 20px;
 cursor: pointer;
+}
 `
 
 const WrapLink = styled.div`
+@media(max-width: 576px){
 display: flex;
 justify-content: center;
 :hover{
   color: #0a59d0;
+}
 }
 `;
 

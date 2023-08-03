@@ -5,6 +5,7 @@ import { ReactComponent as leavel } from "../../assets/icons/card_leavel.svg";
 import { ReactComponent as card_rectangle } from "../../assets/icons/card_rectangle.svg";
 
 const Icons = styled.div``;
+
 Icons.UserImg = styled(user_img)`
 width: 35px;
 height: 35px;
@@ -21,17 +22,23 @@ cursor: pointer;
 `;
 
 const Wrapper = styled.div`
+@media(max-width: 576px){
 width: 100%;
+}
 `
 const Container = styled.div`
+@media(max-width: 576px){
 padding: var(--paddingMin);
+}
 `
 
 const UserName = styled.div`
+@media(max-width: 576px){
 display: flex;
 align-items: center;
 margin-left: 5px;
 margin-top: 20px;
+}
 `
 
 const getType = ({ type }) => {
@@ -62,18 +69,24 @@ const getType = ({ type }) => {
 }
 
 const UserText = styled.div`
+@media(max-width: 576px){
 ${getType}
+}
 `
 
 const CardImg = styled.img`
+@media(max-width: 576px){
 width: 100%;
+}
 `;
 
 const CardTitle = styled.div`
+@media(max-width: 576px){
 position: relative;
 margin-bottom: 23px;
 :active{
   background: #2b6ebf;
+}
 }
 `;
 
@@ -94,6 +107,7 @@ const getPosition = ({ center }) => {
 }
 
 const CardMessage = styled.div`
+@media(max-width: 576px){
 position: absolute;
 top: -18px;
 width: ${({ width }) => {
@@ -107,6 +121,7 @@ display: flex;
 align-items: center;
 ${getPosition};
 cursor: pointer;
+}
 `;
 
 const getLiked = ({ type }) => {
@@ -125,10 +140,13 @@ const getLiked = ({ type }) => {
 }
 
 const Liked = styled.div`
+@media(max-width: 576px){
 ${getLiked}
+}
 `
 
 const Input = styled.input`
+@media(max-width: 576px){
 width: 100%;
 height: 44px;
 font-size: 14px;
@@ -140,6 +158,7 @@ outline: none;
 margin-top: 10px;
 ::placeholder{
   color: #CFCFCF;
+}
 }
 `
 

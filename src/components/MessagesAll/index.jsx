@@ -15,37 +15,12 @@ import {
 } from './style';
 
 import { useNavigate } from 'react-router-dom';
+import { MessagesContext } from '../../context/MessageAll';
 
 export default function MessagesAll () {
 
   const navigate = useNavigate();
-
-  const data = [
-    {
-      id: 1,
-      month: 'May',
-      day: 7,
-      time: '19:07',
-      title: 'My name is Catherine. I like dancing',
-      description: 'Lorem Ipsum is simply dummy text of the....',
-    },
-    {
-      id: 2,
-      month: 'May',
-      day: 7,
-      time: '19:10',
-      title: 'My name is Catherine. I like dancing',
-      description: 'Lorem Ipsum is simply dummy text of the....',
-    },
-    {
-      id: 3,
-      month: 'May',
-      day: 7,
-      time: '19:15',
-      title: 'My name is Catherine. I like dancing',
-      description: 'Lorem Ipsum is simply dummy text of the....',
-    },
-  ];
+  const [messages] = MessagesContext();
 
   const getMessage = () => {
     navigate('/message');
@@ -61,7 +36,7 @@ export default function MessagesAll () {
           <Title>Message</Title>
         </TitleWrapper>
         {
-          data.map(({
+          messages?.map(({
             id,
             month,
             day,
