@@ -15,6 +15,7 @@ import HomePage from '../pages/Home';
 import LikedPage from '../pages/Liked';
 import SearchPage from '../pages/Search';
 // Hidden true
+import RegistrationPage from "../pages/Regitration";
 import LoginAcountPage from "../pages/LoginAcount";
 import MessagesAllPage from "../pages/MessagesAll"
 import TelegramPage from "../pages/Telegram";
@@ -61,6 +62,13 @@ const navbar = [
     url: acount,
     private: false,
     hidden: false,
+  },
+  {
+    id: useUniqeID,
+    path: '/registration',
+    element: <RegistrationPage />,
+    private: false,
+    hidden: true,
   },
   {
     id: useUniqeID,

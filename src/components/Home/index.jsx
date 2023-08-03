@@ -30,8 +30,6 @@ export default function Home () {
   const navigate = useNavigate();
   const [state, dispatch] = HomeContext();
 
-  console.log(state);
-
   const category = [
     { id: 1, name: 'chemistry#', url: icon1, mg: ' ' },
     { id: 2, name: 'maths#', url: icon2, mg: ' ' },

@@ -33,7 +33,7 @@ export default function Acount () {
   }
 
   const Click = () => {
-    navigate('/loginacount');
+    navigate('/registration');
   }
 
   return (
