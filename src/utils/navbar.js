@@ -20,6 +20,11 @@ import LoginAcountPage from "../pages/LoginAcount";
 import MessagesAllPage from "../pages/MessagesAll"
 import TelegramPage from "../pages/Telegram";
 import MessagePage from "../pages/Message";
+import GroupPage from "../pages/Group";
+import UserPage from "../pages/User";
+import PersonalPage from "../pages/Personal";
+import PremiumUserPage from "../pages/PremiumUser";
+import GroupsPage from "../pages/Groups";
 
 
 const navbar = [
@@ -95,6 +100,41 @@ const navbar = [
     id: useUniqeID,
     path: '/message',
     element: <MessagePage />,
+    private: false,
+    hidden: true,
+  },
+  {
+    id: useUniqeID,
+    path: '/group',
+    element: < GroupPage />,
+    private: false,
+    hidden: true,
+  },
+  {
+    id: useUniqeID,
+    path: '/user',
+    element: < UserPage />,
+    private: false,
+    hidden: true,
+  },
+  {
+    id: useUniqeID,
+    path: '/personal',
+    element: < PersonalPage />,
+    private: false,
+    hidden: true,
+  },
+  {
+    id: useUniqeID,
+    path: '/premium',
+    element: < PremiumUserPage />,
+    private: false,
+    hidden: true,
+  },
+  {
+    id: useUniqeID,
+    path: '/groups',
+    element: < GroupsPage />,
     private: false,
     hidden: true,
   },

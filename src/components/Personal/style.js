@@ -162,9 +162,6 @@ padding-bottom: 8px;
 `
 
 
-
-
-
 export {
   Wrapper,
   Icons,

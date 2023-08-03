@@ -16,9 +16,15 @@ import {
 } from './style';
 
 import { TelegramContext } from '../../context/Telegram';
-import category from '../../utils/telegramNavbar';
 
-export default function Telegram () {
+export default function PremiumUser () {
+
+  const category = [
+    { id: 1, name: 'All', mg: ' ', to: '/telegram' },
+    { id: 2, name: 'Personal', mg: ' ', to: '/personal' },
+    { id: 3, name: 'Premium users', mg: ' ', to: '/premium' },
+    { id: 4, name: 'Groups', mg: '', to: '/groups' },
+  ];
 
   const [post] = TelegramContext();
 
@@ -53,6 +59,9 @@ export default function Telegram () {
           name,
           time,
           description,
+          privateIcon,
+          private1,
+          private2
         }) => {
           return (
             <Content key={id}>
@@ -64,6 +73,11 @@ export default function Telegram () {
                 </ContentBox>
                 <ContentBox>
                   <ContentText>{time}</ContentText>
+                  {
+                    privateIcon
+                      ? <UserImg src={private1} />
+                      : <UserImg src={private2} />
+                  }
                 </ContentBox>
               </ContentBox>
             </Content>

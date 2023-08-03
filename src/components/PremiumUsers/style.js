@@ -127,18 +127,12 @@ const getBox = ({ type }) => {
     };
     default: return {
       display: 'flex',
-      justifyContent: 'end',
-      alignItems: 'center',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'end',
     };
   }
 }
-
-const ContentBox = styled.div`
-@media(max-width: 576px){
-${getBox};
-}
-`
-
 const getType = ({ type }) => {
   switch (type) {
     case 'bold': return {
@@ -151,6 +145,12 @@ const getType = ({ type }) => {
     };
   }
 }
+
+const ContentBox = styled.div`
+@media(max-width: 576px){
+${getBox};
+}
+`
 
 const ContentText = styled.div`
 @media(max-width: 576px){
