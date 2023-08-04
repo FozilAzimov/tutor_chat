@@ -5,12 +5,14 @@ import { ReactComponent as arrow } from "../../assets/icons/arrow_prewiev.svg";
 const Icons = styled.div``;
 
 const IconWrap = styled.div`
+@media(max-width: 576px){
 :hover{
   background: #f5f5f5;
 }
 :active{
   background: #f5f5f5;
   box-shadow: 0 0 10px #f3f3f3;
+}
 }
 `;
 

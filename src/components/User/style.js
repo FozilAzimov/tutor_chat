@@ -89,7 +89,55 @@ margin-left: 5px;
 
 const CategoryIcon = styled.img``;
 
+const Wrap = styled.div`
+@media (max-width: 576px) {  
+width: 100%;
+display: flex;
+flex-direction: column;
+align-items: start;
+}
+`
 
+const Item = styled.div`
+@media (max-width: 576px) {  
+display: flex;
+align-items: center;
+margin-top: 30px;
+}
+`
+
+const Title = styled.div`
+@media (max-width: 576px) {  
+display: flex;
+flex-direction: column;
+align-items: start;
+margin-left: 20px;
+}
+`
+
+const getType = ({ type }) => {
+  switch (type) {
+    case 'bold': return {
+      color: '#292C38',
+      fontWeight: '700',
+      fontSize: '14px',
+      marginBottom: '5px'
+    };
+    default: return {
+      color: '#96A0B5',
+      fontWeight: '500',
+      fontSize: '10px'
+    };
+  }
+}
+
+const ItemText = styled.div`
+@media (max-width: 576px) {  
+${getType};
+}
+`
+
+const Img = styled.img``;
 
 
 export {
@@ -102,4 +150,9 @@ export {
   Category,
   Text,
   CategoryIcon,
+  Wrap,
+  Item,
+  Title,
+  Img,
+  ItemText
 }

@@ -1,9 +1,5 @@
 import React from 'react';
 
-import icon1 from '../../assets/icons/user_icon.svg';
-import icon2 from '../../assets/icons/video.svg';
-import icon3 from '../../assets/icons/group.svg';
-
 import {
   Box,
   Category,
@@ -11,20 +7,24 @@ import {
   CategoryWrap,
   Container,
   Icons,
+  Img,
   Input,
+  Item,
+  ItemText,
   Text,
+  Title,
+  Wrap,
   Wrapper
 } from './style';
 
-import Card from '../Card';
+import category from '../../utils/searchNavbar';
+import { TelegramContext } from '../../context/Telegram';
 
 export default function User () {
 
-  const category = [
-    { id: 1, name: 'User', url: icon1, to: '/user' },
-    { id: 2, name: 'Video', url: icon2, to: '/search' },
-    { id: 3, name: 'Group', url: icon3, to: '/group' },
-  ]
+  const [post,] = TelegramContext();
+
+
 
   return (
     <Wrapper>
@@ -35,7 +35,7 @@ export default function User () {
         </Box>
         <CategoryWrap>
           {
-            category.map(({ id, name, url, to }) => {
+            category?.map(({ id, name, url, to }) => {
               return (
                 <Category className={({ isActive }) => isActive && 'active'} key={id} to={to}>
                   <CategoryIcon src={url} />
@@ -45,8 +45,22 @@ export default function User () {
             })
           }
         </CategoryWrap>
+        <Wrap>
+          {
+            post?.map(({ id, name, url, description }) => {
+              return (
+                <Item key={id}>
+                  <Img src={url} />
+                  <Title>
+                    <ItemText type='bold'>{name}</ItemText>
+                    <ItemText>{description}</ItemText>
+                  </Title>
+                </Item>
+              )
+            })
+          }
+        </Wrap>
       </Container>
-      <Card Text='Matematika' width='fit-content' center='center' />
     </Wrapper >
   )
 }
