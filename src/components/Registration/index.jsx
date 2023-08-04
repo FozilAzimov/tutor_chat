@@ -17,9 +17,9 @@ export default function Registration () {
   const [body, setBody] = useState({});
   const [type, setType] = useState('password');
   const [isHidden, setIsHidden] = useState(true);
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [typeBtn, setTypeBtn] = useState('');
+  const [, setEmail] = useState('');
+  const [, setPassword] = useState('');
+  const [typeBtn,] = useState('');
 
   const Hidden = () => {
     if (isHidden) {
