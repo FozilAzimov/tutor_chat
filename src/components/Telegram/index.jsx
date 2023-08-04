@@ -31,12 +31,11 @@ export default function Telegram () {
         </Box>
         <CategoryWrap>
           {
-            category?.map(({ id, name, mg, to }) => {
+            category?.map(({ id, name, to }) => {
               return (
                 <Category
                   className={({ isActive }) => isActive && 'active'}
                   key={id}
-                  mg={mg}
                   to={to}
                 >
                   <Text>{name}</Text>

@@ -34,18 +34,11 @@ export default function Home () {
 
 
   const category = [
-    { id: 1, name: 'chemistry#', url: icon1, mg: ' ' },
-    { id: 2, name: 'maths#', url: icon2, mg: ' ' },
-    { id: 3, name: 'physics#', url: icon3, mg: ' ' },
-    { id: 4, name: 'astronomy#', url: icon4, mg: '' },
+    { id: 1, name: 'chemistry#', url: icon1 },
+    { id: 2, name: 'maths#', url: icon2 },
+    { id: 3, name: 'physics#', url: icon3 },
+    { id: 4, name: 'astronomy#', url: icon4 },
   ];
-
-  const getMessages = () => {
-    navigate(`/messages`);
-  }
-  const getTelegram = () => {
-    navigate(`/telegram`);
-  }
 
   return (
     <Wrapper>
@@ -55,11 +48,11 @@ export default function Home () {
           <BoxTitle type='min'>
             <IconWrap>
               <Count>{messages?.length}</Count>
-              <Icons.Message onClick={getMessages} />
+              <Icons.Message onClick={() => navigate(`/messages`)} />
             </IconWrap>
             <IconWrap>
               <Count>{post?.length}</Count>
-              <Icons.Telegram onClick={getTelegram} />
+              <Icons.Telegram onClick={() => navigate(`/telegram`)} />
             </IconWrap>
           </BoxTitle>
         </BoxTitle>
@@ -70,9 +63,9 @@ export default function Home () {
         </Box>
         <CategoryWrap>
           {
-            category.map(({ id, name, url, mg }) => {
+            category.map(({ id, name, url }) => {
               return (
-                <Category mg={mg} key={id}>
+                <Category key={id}>
                   <CategoryIcon src={url} />
                   <Text>{name}</Text>
                 </Category>

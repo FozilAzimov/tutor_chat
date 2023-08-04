@@ -16,15 +16,9 @@ import {
 } from './style';
 
 import { TelegramContext } from '../../context/Telegram';
+import category from '../../utils/telegramNavbar';
 
 export default function Groups () {
-
-  const category = [
-    { id: 1, name: 'All', mg: ' ', to: '/telegram' },
-    { id: 2, name: 'Personal', mg: ' ', to: '/personal' },
-    { id: 3, name: 'Premium users', mg: ' ', to: '/premium' },
-    { id: 4, name: 'Groups', mg: '', to: '/groups' },
-  ];
 
   const [post] = TelegramContext();
 
@@ -37,12 +31,11 @@ export default function Groups () {
         </Box>
         <CategoryWrap>
           {
-            category?.map(({ id, name, mg, to }) => {
+            category?.map(({ id, name, to }) => {
               return (
                 <Category
                   className={({ isActive }) => isActive && 'active'}
                   key={id}
-                  mg={mg}
                   to={to}
                 >
                   <Text>{name}</Text>

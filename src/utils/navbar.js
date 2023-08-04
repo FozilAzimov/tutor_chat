@@ -25,6 +25,7 @@ import UserPage from "../pages/User";
 import PersonalPage from "../pages/Personal";
 import PremiumUserPage from "../pages/PremiumUser";
 import GroupsPage from "../pages/Groups";
+import ProfilePage from "../pages/Profile";
 
 
 const navbar = [
@@ -135,6 +136,13 @@ const navbar = [
     id: useUniqeID,
     path: '/groups',
     element: < GroupsPage />,
+    private: false,
+    hidden: true,
+  },
+  {
+    id: useUniqeID,
+    path: '/profile',
+    element: < ProfilePage />,
     private: false,
     hidden: true,
   },

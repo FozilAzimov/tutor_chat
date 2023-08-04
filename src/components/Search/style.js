@@ -54,6 +54,7 @@ display: flex;
 justify-content: space-between;
 flex-wrap: wrap;
 align-items: center;
+gap: 10px;
 :hover{
   cursor: pointer;
 }

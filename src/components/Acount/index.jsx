@@ -32,10 +32,6 @@ export default function Acount () {
     }
   }
 
-  const Click = () => {
-    navigate('/registration');
-  }
-
   return (
     <Wrapper>
       <Title>
@@ -49,7 +45,7 @@ export default function Acount () {
         </FonImgWrap>
         {
           check
-            ? <Button width='100%' top='150' onClick={Click} type={cheked}>Next</Button>
+            ? <Button width='100%' top='150' onClick={() => navigate('/loginacount')} type={cheked}>Next</Button>
             : <Button width='100%' top='150'>Next</Button>
         }
       </Title>

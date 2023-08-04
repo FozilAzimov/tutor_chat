@@ -14,12 +14,15 @@ import {
   Liked,
   Input,
 } from './style';
+import { useNavigate } from 'react-router-dom';
 
 export default function Card ({ Text, width, center }) {
 
+  const navigate = useNavigate();
+
   return (
     <Wrapper>
-      <UserName>
+      <UserName onClick={() => navigate(`/profile`)}>
         <Icons.UserImg />
         <UserText>Username</UserText>
       </UserName>

@@ -55,6 +55,7 @@ display: flex;
 justify-content: space-between;
 flex-wrap: wrap;
 align-items: center;
+gap: 10px;
 margin-bottom: 30px;
 .active{
   background: #DDEBFF;
@@ -75,7 +76,6 @@ border-radius: 11px;
 display: flex;
 justify-content: space-between;
 align-items: center;
-margin-right: ${({ mg }) => mg ? '10px' : '0'};
 margin-top: 20px;
 }
 `
