@@ -26,7 +26,7 @@ import {
 
 import { useNavigate } from 'react-router-dom';
 
-export default function Profile () {
+export default function PremiumProfile () {
 
   const data = [
     { id: 1, text: 'All', to: '/profile' },

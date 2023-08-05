@@ -47,11 +47,11 @@ export default function Home () {
           <Title type='lg'>Tutor Chat</Title>
           <BoxTitle type='min'>
             <IconWrap>
-              <Count>{messages?.length}</Count>
+              <Count>{messages?.length}+</Count>
               <Icons.Message onClick={() => navigate(`/messages`)} />
             </IconWrap>
             <IconWrap>
-              <Count>{post?.length}</Count>
+              <Count>{post?.length}+</Count>
               <Icons.Telegram onClick={() => navigate(`/telegram`)} />
             </IconWrap>
           </BoxTitle>

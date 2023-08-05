@@ -26,6 +26,9 @@ import PersonalPage from "../pages/Personal";
 import PremiumUserPage from "../pages/PremiumUser";
 import GroupsPage from "../pages/Groups";
 import ProfilePage from "../pages/Profile";
+import FreePage from "../pages/Free";
+import PremiumProfilePage from "../pages/PremiumProfile";
+import SavedPage from "../pages/Saved";
 
 
 const navbar = [
@@ -143,6 +146,27 @@ const navbar = [
     id: useUniqeID,
     path: '/profile',
     element: < ProfilePage />,
+    private: false,
+    hidden: true,
+  },
+  {
+    id: useUniqeID,
+    path: '/free',
+    element: < FreePage />,
+    private: false,
+    hidden: true,
+  },
+  {
+    id: useUniqeID,
+    path: '/premium_profile',
+    element: < PremiumProfilePage />,
+    private: false,
+    hidden: true,
+  },
+  {
+    id: useUniqeID,
+    path: '/saved',
+    element: < SavedPage />,
     private: false,
     hidden: true,
   },

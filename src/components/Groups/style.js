@@ -104,6 +104,9 @@ background: rgba(236, 239, 244, .1);
 cursor: pointer;
 border-top: 1px solid rgb(236, 239, 244);
 }
+@media (max-width:400px){
+  padding: 15px 27px;
+}
 `
 
 const UserImg = styled.img`

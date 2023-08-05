@@ -87,11 +87,11 @@ position: relative;
 const Count = styled.div`
 @media(max-width: 576px){
 position: absolute;
-width: 15px;
+width: 22px;
 height: 15px;
-border-radius: 50%;
-background: red;
-right: -3px;
+border-radius: 22px;
+background: #c00;
+right: -9px;
 top: -4px;
 color: #fff;
 font-size: 10px;
@@ -99,7 +99,7 @@ display: flex;
 justify-content: center;
 align-items: center;
 font-family: 'Inter', sans-serif;
-font-weight: 600;
+font-weight: 400;
 }
 `
 
