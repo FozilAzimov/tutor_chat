@@ -1,6 +1,6 @@
 import React from 'react';
 
-import img from '../../assets/imgs/profile_img.png'
+import img from '../../assets/imgs/profile_img.png';
 
 import {
   Icons,

@@ -326,7 +326,7 @@ const CardName = styled.div`
   padding: 2px 8px;
   background: rgba(57, 96, 100, .5);
   position: absolute;
-  top: 25px;
+  top: 20px;
   transform: translateX(-50%);
   font-size: 7px;
   font-weight: 400;
@@ -335,22 +335,22 @@ const CardName = styled.div`
   border-radius: 2px;
 }
 @media(max-width: 350px) {
-  top: 20px;
+  top: 17px;
 }
 `
 
 const VideoPrice = styled.div`
 @media(max-width: 576px) {
   width: fit-content;
-  padding: 2px 7px;
+  padding: 2px 5px;
   background: rgba(87, 144, 223, 1);
   border-radius: 2px;
   color: #fff;
-  font-size: 6px;
+  font-size: 5px;
   font-weight: 400;
   position: absolute;
-  right: 5px;
-  bottom: 3px;
+  right: 3px;
+  bottom: 1px;
 }
 @media(max-width: 350px) {
   right: 2px;
