@@ -349,8 +349,8 @@ const VideoPrice = styled.div`
   font-size: 5px;
   font-weight: 400;
   position: absolute;
-  right: 3px;
-  bottom: 1px;
+  right: 4px;
+  bottom: 3px;
 }
 @media(max-width: 350px) {
   right: 2px;
