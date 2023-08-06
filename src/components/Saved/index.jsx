@@ -3,37 +3,43 @@ import React from 'react';
 import img from '../../assets/imgs/profile_img.png'
 
 import {
-  Box,
-  Btn,
-  BtnWrap,
+  Icons,
+  IconWrap,
+  Wrapper,
   Container,
   Header,
-  IconWrap,
-  Icons,
-  Img,
+  Title,
+  ProfileSection,
+  ProfileHeader,
   ImgWrap,
+  Img,
+  Box,
+  Text,
   LinkWrap,
+  BtnWrap,
+  Btn,
   Pages,
   PagesText,
-  ProfileHeader,
-  ProfileSection,
-  Text,
-  Title,
-  VideoBox,
   VideoWrapper,
-  Wrapper
+  VideoBox,
+  VideoBoxImg,
+  Parent,
+  CardName,
+  VideoPrice,
 } from './style';
 
 import { useNavigate } from 'react-router-dom';
 
-export default function Saved () {
+export default function Free () {
 
   const data = [
     { id: 1, text: 'All', to: '/profile' },
     { id: 2, text: 'Bepul darslar', to: '/free' },
     { id: 3, text: 'Premium darslar', to: '/premium_profile' },
     { id: 4, text: 'Saved', to: '/saved' },
-  ]
+  ];
+
+  const cards = [];
 
   const navigate = useNavigate();
 
@@ -99,18 +105,27 @@ export default function Saved () {
       </ProfileSection>
 
       <VideoWrapper>
-        <VideoBox>1</VideoBox>
-        <VideoBox>1</VideoBox>
-        <VideoBox>1</VideoBox>
-        <VideoBox>1</VideoBox>
-        <VideoBox>1</VideoBox>
-        <VideoBox>1</VideoBox>
-        <VideoBox>1</VideoBox>
-        <VideoBox>1</VideoBox>
-        <VideoBox>1</VideoBox>
-        <VideoBox>1</VideoBox>
-        <VideoBox>1</VideoBox>
-        <VideoBox>1</VideoBox>
+        {
+          cards.map(({ id, type, text, src, price }) => {
+            return (
+              type ? (
+                <VideoBox key={id}>
+                  <VideoBoxImg src={src} />
+                  <Parent>
+                    <Icons.Video />
+                    <CardName>{text}</CardName>
+                  </Parent>
+                  <VideoPrice>{price}</VideoPrice>
+                </VideoBox>
+              )
+                : (
+                  <VideoBox key={id}>
+                    <VideoBoxImg src={src} />
+                  </VideoBox>
+                )
+            )
+          })
+        }
       </VideoWrapper>
 
     </Wrapper>

@@ -14,6 +14,7 @@ import {
   Liked,
   Input,
 } from './style';
+
 import { useNavigate } from 'react-router-dom';
 
 export default function Card ({ Text, width, center }) {

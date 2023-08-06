@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import { ReactComponent as arrow } from "../../assets/icons/arrow_prewiev.svg";
 import { ReactComponent as angle } from "../../assets/icons/dodEdit.svg";
 import { ReactComponent as player } from "../../assets/icons/player.svg";
+import { ReactComponent as video } from "../../assets/icons/profile_video.svg";
 
 const Icons = styled.div``;
 
@@ -37,6 +38,17 @@ left: 50%;
 top: 50%;
 transform: translate(-50%, -50%);
 cursor: pointer;
+`;
+Icons.Video = styled(video)`
+position: absolute;
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%);
+cursor: pointer;
+@media (max-width: 350px) {
+  width: 28px;
+  height: 28px;
+}
 `;
 
 const IconWrap = styled.div`
@@ -89,6 +101,7 @@ const ProfileSection = styled.div`
 width: 100%;
 background: #FCFCFC;
 border-radius: 50px 50px 0 0;
+padding-bottom: 15px;
 }
 `
 
@@ -124,6 +137,7 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: space-between;
+cursor: pointer;
 }
 `
 
@@ -167,7 +181,7 @@ const getType = ({ type }) => {
 
 const Text = styled.div`
 @media (max-width: 576px) {
-${getType}
+  ${getType}
 }
 `
 
@@ -238,30 +252,111 @@ const PagesText = styled(NavLink)`
 
 const VideoWrapper = styled.div`
 @media(max-width: 576px) {
-  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 2px;
-  margin-top: 15px;
 }
 `
 
 const VideoBox = styled.div`
 @media(max-width: 576px) {
-  max-width: 140px;
-  min-width: 100px;
-  width: 100%;
+  width: calc(33.33% - 2px);
   height: 130px;
-  background: red;
+  margin-bottom: 3px;
+  position: relative;
+  cursor: pointer;
+}
+@media(max-width: 550px) {
+  height: 125px;
+}
+@media(max-width: 500px) {
+  height: 120px;
+}
+@media(max-width: 450px) {
+  height: 110px;
+}
+@media(max-width: 400px) {
+  height: 100px;
+}
+@media(max-width: 380px) {
+  height: 90px;
+}
+@media(max-width: 350px) {
+  height: 80px;
 }
 `
 
+const VideoBoxImg = styled.img`
+@media(max-width: 576px) {
+  width: 100%;
+  height: 130px;
+}
+@media(max-width: 550px) {
+  height: 125px;
+}
+@media(max-width: 500px) {
+  height: 120px;
+}
+@media(max-width: 450px) {
+  height: 110px;
+}
+@media(max-width: 400px) {
+  height: 100px;
+}
+@media(max-width: 380px) {
+  height: 90px;
+}
+@media(max-width: 350px) {
+  height: 80px;
+}
+`
 
+const Parent = styled.div`
+@media(max-width: 576px) {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+`
 
+const CardName = styled.div`
+@media(max-width: 576px) {
+  width: fit-content;
+  padding: 2px 8px;
+  background: rgba(57, 96, 100, .5);
+  position: absolute;
+  top: 25px;
+  transform: translateX(-50%);
+  font-size: 7px;
+  font-weight: 400;
+  color: #fff;
+  border-radius: 2px;
+  border-radius: 2px;
+}
+@media(max-width: 350px) {
+  top: 20px;
+}
+`
 
-
-
+const VideoPrice = styled.div`
+@media(max-width: 576px) {
+  width: fit-content;
+  padding: 2px 7px;
+  background: rgba(87, 144, 223, 1);
+  border-radius: 2px;
+  color: #fff;
+  font-size: 6px;
+  font-weight: 400;
+  position: absolute;
+  right: 5px;
+  bottom: 3px;
+}
+@media(max-width: 350px) {
+  right: 2px;
+  bottom: 0px;
+}
+`
 
 
 
@@ -284,5 +379,9 @@ export {
   Pages,
   PagesText,
   VideoWrapper,
-  VideoBox
+  VideoBox,
+  VideoBoxImg,
+  Parent,
+  CardName,
+  VideoPrice,
 }

@@ -2,13 +2,14 @@ import React from 'react';
 
 import {
   Container,
+  Link,
   NavImg,
   NavbarWrapper,
   Parent,
   Wrapper,
 } from './style';
 
-import { NavLink, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import navbar from '../../utils/navbar';
 
 export default function Navbar () {
@@ -23,9 +24,9 @@ export default function Navbar () {
           {
             navbar.map(({ url, path, hidden }, index) => {
               return !hidden && (
-                <NavLink key={index} to={path} className='NavLink'>
+                <Link key={index} className={({ isActive }) => isActive && 'active'} to={path}>
                   <NavImg src={url} />
-                </NavLink>
+                </Link>
               )
             })
           }

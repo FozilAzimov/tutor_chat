@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import { styled } from "styled-components";
 
 const Wrapper = styled.div`
@@ -48,15 +49,27 @@ const NavbarWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  .NavLink{
-    padding: 10px;
+  .active{
+    background: #e5e5e5;
+    border-radius: 50%;
   }
 }
 @media(max-width: 350px){
   padding: 8px 10px;
-  .NavLink{
-    padding: 8px;
+  .active{
+    background: #e5e5e5;
+    border-radius: 50%;
   }
+}
+`
+
+const Link = styled(NavLink)`
+@media(max-width: 576px){
+  text-decoration: none;
+  padding: 10px;
+}
+@media(max-width: 350px){
+  padding: 8px;
 }
 `
 
@@ -77,5 +90,6 @@ export {
   Container,
   Parent,
   NavbarWrapper,
+  Link,
   NavImg,
 }

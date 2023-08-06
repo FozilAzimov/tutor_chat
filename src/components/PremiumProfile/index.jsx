@@ -1,11 +1,15 @@
 import React from 'react';
 
-import img from '../../assets/imgs/profile_img.png'
+import img from '../../assets/imgs/profile_img.png';
+import video1 from '../../assets/imgs/profile_card1.png';
+import video2 from '../../assets/imgs/profile_card2.png';
+import video3 from '../../assets/imgs/profile_card3.png';
 
 import {
   Box,
   Btn,
   BtnWrap,
+  CardName,
   Container,
   Header,
   IconWrap,
@@ -15,25 +19,34 @@ import {
   LinkWrap,
   Pages,
   PagesText,
+  Parent,
   ProfileHeader,
   ProfileSection,
   Text,
   Title,
   VideoBox,
+  VideoBoxImg,
+  VideoPrice,
   VideoWrapper,
   Wrapper
 } from './style';
 
 import { useNavigate } from 'react-router-dom';
 
-export default function PremiumProfile () {
+export default function Profile () {
 
   const data = [
     { id: 1, text: 'All', to: '/profile' },
     { id: 2, text: 'Bepul darslar', to: '/free' },
     { id: 3, text: 'Premium darslar', to: '/premium_profile' },
     { id: 4, text: 'Saved', to: '/saved' },
-  ]
+  ];
+
+  const cards = [
+    { id: 1, type: ' ', text: 'Kimyo', src: video1, price: '$100' },
+    { id: 2, type: ' ', text: 'Fizika', src: video2, price: '$100' },
+    { id: 3, type: ' ', text: 'Biologiya', src: video3, price: '$100' },
+  ];
 
   const navigate = useNavigate();
 
@@ -97,22 +110,29 @@ export default function PremiumProfile () {
           </Pages>
         </Container>
       </ProfileSection>
-
       <VideoWrapper>
-        <VideoBox>1</VideoBox>
-        <VideoBox>1</VideoBox>
-        <VideoBox>1</VideoBox>
-        <VideoBox>1</VideoBox>
-        <VideoBox>1</VideoBox>
-        <VideoBox>1</VideoBox>
-        <VideoBox>1</VideoBox>
-        <VideoBox>1</VideoBox>
-        <VideoBox>1</VideoBox>
-        <VideoBox>1</VideoBox>
-        <VideoBox>1</VideoBox>
-        <VideoBox>1</VideoBox>
+        {
+          cards.map(({ id, type, text, src, price }) => {
+            return (
+              type ? (
+                <VideoBox key={id}>
+                  <VideoBoxImg src={src} />
+                  <Parent>
+                    <Icons.Video />
+                    <CardName>{text}</CardName>
+                  </Parent>
+                  <VideoPrice>{price}</VideoPrice>
+                </VideoBox>
+              )
+                : (
+                  <VideoBox key={id}>
+                    <VideoBoxImg src={src} />
+                  </VideoBox>
+                )
+            )
+          })
+        }
       </VideoWrapper>
-
-    </Wrapper>
+    </Wrapper >
   )
 }

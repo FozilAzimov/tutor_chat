@@ -1,27 +1,34 @@
 import React from 'react';
 
 import img from '../../assets/imgs/profile_img.png'
+import video1 from '../../assets/imgs/profile_card1.png';
+import video2 from '../../assets/imgs/profile_card2.png';
+import video3 from '../../assets/imgs/profile_card3.png';
 
 import {
-  Box,
-  Btn,
-  BtnWrap,
+  Icons,
+  IconWrap,
+  Wrapper,
   Container,
   Header,
-  IconWrap,
-  Icons,
-  Img,
+  Title,
+  ProfileSection,
+  ProfileHeader,
   ImgWrap,
+  Img,
+  Box,
+  Text,
   LinkWrap,
+  BtnWrap,
+  Btn,
   Pages,
   PagesText,
-  ProfileHeader,
-  ProfileSection,
-  Text,
-  Title,
-  VideoBox,
   VideoWrapper,
-  Wrapper
+  VideoBox,
+  VideoBoxImg,
+  Parent,
+  CardName,
+  VideoPrice,
 } from './style';
 
 import { useNavigate } from 'react-router-dom';
@@ -33,7 +40,19 @@ export default function Free () {
     { id: 2, text: 'Bepul darslar', to: '/free' },
     { id: 3, text: 'Premium darslar', to: '/premium_profile' },
     { id: 4, text: 'Saved', to: '/saved' },
-  ]
+  ];
+
+  const cards = [
+    { id: 1, type: '', text: 'Kimyo', src: video1, price: '$100' },
+    { id: 2, type: '', text: 'Fizika', src: video2, price: '$100' },
+    { id: 3, type: '', text: 'Biologiya', src: video3, price: '$100' },
+    { id: 4, type: '', text: 'Biologiya', src: video3, price: '$100' },
+    { id: 5, type: '', text: 'Kimyo', src: video1, price: '$100' },
+    { id: 6, type: '', text: 'Fizika', src: video2, price: '$100' },
+    { id: 7, type: '', text: 'Kimyo', src: video1, price: '$100' },
+    { id: 8, type: '', text: 'Fizika', src: video2, price: '$100' },
+    { id: 9, type: '', text: 'Biologiya', src: video3, price: '$100' },
+  ];
 
   const navigate = useNavigate();
 
@@ -99,18 +118,27 @@ export default function Free () {
       </ProfileSection>
 
       <VideoWrapper>
-        <VideoBox>1</VideoBox>
-        <VideoBox>1</VideoBox>
-        <VideoBox>1</VideoBox>
-        <VideoBox>1</VideoBox>
-        <VideoBox>1</VideoBox>
-        <VideoBox>1</VideoBox>
-        <VideoBox>1</VideoBox>
-        <VideoBox>1</VideoBox>
-        <VideoBox>1</VideoBox>
-        <VideoBox>1</VideoBox>
-        <VideoBox>1</VideoBox>
-        <VideoBox>1</VideoBox>
+        {
+          cards.map(({ id, type, text, src, price }) => {
+            return (
+              type ? (
+                <VideoBox key={id}>
+                  <VideoBoxImg src={src} />
+                  <Parent>
+                    <Icons.Video />
+                    <CardName>{text}</CardName>
+                  </Parent>
+                  <VideoPrice>{price}</VideoPrice>
+                </VideoBox>
+              )
+                : (
+                  <VideoBox key={id}>
+                    <VideoBoxImg src={src} />
+                  </VideoBox>
+                )
+            )
+          })
+        }
       </VideoWrapper>
 
     </Wrapper>

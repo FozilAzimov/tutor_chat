@@ -34,11 +34,12 @@ padding: var(--paddingMin);
 
 const UserName = styled.div`
 @media(max-width: 576px){
-display: flex;
-align-items: center;
-margin-left: 5px;
-margin-top: 20px;
-cursor: pointer;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  margin-left: 5px;
+  margin-top: 20px;
+  cursor: pointer;
 }
 `
 
