@@ -84,22 +84,66 @@ const IconWrap = styled.div`
 position: relative;
 }
 `
+
+const getHidden = ({ type }) => {
+  switch (type) {
+    case '1': return {
+      position: 'absolute',
+      width: '22px',
+      height: '15px',
+      borderRadius: '22px',
+      background: '#c00',
+      right: '-9px',
+      top: '-4px',
+      color: '#fff',
+      fontSize: '10px',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      fontWeight: '400',
+    };
+    case '0': return {
+      display: 'none',
+    };
+    case ' ': return {
+      position: 'absolute',
+      width: '22px',
+      height: '15px',
+      borderRadius: '22px',
+      background: '#c00',
+      right: '-9px',
+      top: '-4px',
+      color: '#fff',
+      fontSize: '10px',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      fontWeight: '400',
+    };
+    case '': return {
+      display: 'none',
+    };
+    default: return {
+      position: 'absolute',
+      width: '22px',
+      height: '15px',
+      borderRadius: '22px',
+      background: '#c00',
+      right: '-9px',
+      top: '-4px',
+      color: '#fff',
+      fontSize: '10px',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      fontWeight: '400',
+    }
+  }
+}
+
 const Count = styled.div`
 @media(max-width: 576px){
-position: absolute;
-width: 22px;
-height: 15px;
-border-radius: 22px;
-background: #c00;
-right: -9px;
-top: -4px;
-color: #fff;
-font-size: 10px;
-display: flex;
-justify-content: center;
-align-items: center;
-font-family: 'Inter', sans-serif;
-font-weight: 400;
+${getHidden};
 }
 `
 
@@ -132,7 +176,7 @@ display: flex;
 justify-content: space-between;
 flex-wrap: wrap;
 align-items: center;
-gap: 10px;
+gap: 5px;
 :active{
   background:  #DDEBFF;
 }
@@ -146,7 +190,7 @@ const Category = styled.div`
 @media(max-width: 576px){
 text-decoration: none;
 width: fit-content;
-padding: 8px 10px;
+padding: 7px;
 background: #F4F4F4;
 border-radius: 11px;
 display: flex;
@@ -158,14 +202,16 @@ margin-top: 20px;
 
 const Text = styled.span`
 @media(max-width: 576px){
-font-size: 14px;
+font-size: 12px;
 font-weight: 400;
 color: #5F5F5F;
 margin-left: 5px;
 }
 `
 
-const CategoryIcon = styled.img``;
+const CategoryIcon = styled.img`
+width: 10px;
+`;
 
 
 

@@ -29,8 +29,8 @@ import { TelegramContext } from '../../context/Telegram';
 export default function Home () {
 
   const navigate = useNavigate();
-  const [messages] = MessagesContext();
-  const [post] = TelegramContext();
+  const [messages,] = MessagesContext();
+  const [post,] = TelegramContext();
 
 
   const category = [
@@ -40,6 +40,14 @@ export default function Home () {
     { id: 4, name: 'astronomy#', url: icon4 },
   ];
 
+  const ClickMessages = () => {
+    navigate('/messages');
+  }
+
+  const ClickTelegram = () => {
+    navigate(`/telegram`);
+  }
+
   return (
     <Wrapper>
       <Container>
@@ -48,11 +56,11 @@ export default function Home () {
           <BoxTitle type='min'>
             <IconWrap>
               <Count>{messages?.length}+</Count>
-              <Icons.Message onClick={() => navigate(`/messages`)} />
+              <Icons.Message onClick={ClickMessages} />
             </IconWrap>
             <IconWrap>
               <Count>{post?.length}+</Count>
-              <Icons.Telegram onClick={() => navigate(`/telegram`)} />
+              <Icons.Telegram onClick={ClickTelegram} />
             </IconWrap>
           </BoxTitle>
         </BoxTitle>
