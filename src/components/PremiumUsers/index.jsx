@@ -8,6 +8,7 @@ import {
   Content,
   ContentBox,
   ContentText,
+  IconWrap,
   Icons,
   Input,
   Text,
@@ -17,17 +18,25 @@ import {
 
 import { TelegramContext } from '../../context/Telegram';
 import category from '../../utils/telegramNavbar';
+import { useNavigate } from 'react-router-dom';
 
 export default function PremiumUser () {
+
+  const navigate = useNavigate();
 
   const [post] = TelegramContext();
 
   return (
     <Wrapper>
       <Container>
-        <Box>
-          <Icons.Search />
-          <Input type='text' placeholder='Search message...' />
+        <Box type='parent'>
+          <IconWrap>
+            <Icons.Arrow onClick={() => navigate(-1)} />
+          </IconWrap>
+          <Box>
+            <Icons.Search />
+            <Input type='text' placeholder='Search message...' />
+          </Box>
         </Box>
         <CategoryWrap>
           {

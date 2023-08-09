@@ -1,7 +1,8 @@
 import { styled } from "styled-components";
+import { NavLink } from "react-router-dom";
 
 import { ReactComponent as search } from "../../assets/icons/tg_search.svg";
-import { NavLink } from "react-router-dom";
+import { ReactComponent as arrow } from "../../assets/icons/arrow_prewiev.svg";
 
 const Icons = styled.div``;
 
@@ -10,6 +11,31 @@ position: absolute;
 left: 18px;
 top: 50%;
 transform: translateY(-50%);
+`;
+
+Icons.Arrow = styled(arrow)`
+@media(max-width: 576px){
+width: 40px;
+height: 40px;
+cursor: pointer;
+border-radius: 50%;
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 10px;
+}
+`;
+
+const IconWrap = styled.div`
+@media(max-width: 576px){
+:hover{
+  background: #f5f5f5;
+}
+:active{
+  background: #f5f5f5;
+  box-shadow: 0 0 10px #f3f3f3;
+}
+}
 `;
 
 const Wrapper = styled.div`
@@ -25,10 +51,24 @@ padding: 0 27px;
 }
 `
 
+const getBack = ({ type }) => {
+  switch (type) {
+    case 'parent': return {
+      display: 'flex',
+      alignItems: 'center',
+      marginTop: '15px',
+    };
+    default: return {
+      position: 'relative',
+      width: '100%',
+      marginLeft: '10px',
+    }
+  }
+}
+
 const Box = styled.div`
 @media(max-width: 576px){
-position: relative;
-margin-top: 15px;
+${getBack};
 }
 `;
 
@@ -55,7 +95,7 @@ display: flex;
 justify-content: space-between;
 flex-wrap: wrap;
 align-items: center;
-gap: 10px;
+gap: 5px;
 margin-bottom: 30px;
 .active{
   background: #DDEBFF;
@@ -70,7 +110,7 @@ const Category = styled(NavLink)`
 @media(max-width: 576px){
 text-decoration: none;
 width: fit-content;
-padding: 8px 5px;
+padding: 8px 10px;
 background: #F8FBFF;
 border-radius: 11px;
 display: flex;
@@ -82,7 +122,6 @@ margin-top: 20px;
 
 const Text = styled.span`
 @media(max-width: 576px){
-width: 100px;
 font-size: 12px;
 font-weight: 700;
 color: #292C38;
@@ -171,6 +210,7 @@ padding-bottom: 8px;
 export {
   Wrapper,
   Icons,
+  IconWrap,
   Container,
   Box,
   Input,
