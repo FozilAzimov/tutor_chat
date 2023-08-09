@@ -5,6 +5,8 @@ import { ReactComponent as arrow } from "../../assets/icons/arrow_prewiev.svg";
 import { ReactComponent as angle } from "../../assets/icons/dodEdit.svg";
 import { ReactComponent as player } from "../../assets/icons/player.svg";
 import { ReactComponent as video } from "../../assets/icons/profile_video.svg";
+import { ReactComponent as edit } from "../../assets/icons/edit.svg";
+import { ReactComponent as logout } from "../../assets/icons/loguot.svg";
 
 const Icons = styled.div``;
 
@@ -50,6 +52,14 @@ cursor: pointer;
   height: 28px;
 }
 `;
+Icons.Edit = styled(edit)`
+cursor: pointer;
+`;
+Icons.Logout = styled(logout)`
+cursor: pointer;
+`;
+
+
 
 const IconWrap = styled.div`
 @media(max-width: 576px){
@@ -104,7 +114,6 @@ border-radius: 50px 50px 0 0;
 padding-bottom: 15px;
 }
 `
-
 
 const ProfileHeader = styled.div`
 @media (max-width: 576px) {
@@ -358,6 +367,44 @@ const VideoPrice = styled.div`
 }
 `
 
+const Menu = styled.div`
+@media(max-width: 576px) {
+display: grid;
+flex-direction: column;
+align-items: start;
+padding: 8px 10px;
+width: 130px;
+background: #fff;
+box-shadow: 0px 20px 38px rgba(0, 0, 0, 0.06),
+0px 7px 46px rgba(0, 0, 0, 0.06),
+0px 8px 15px rgba(0, 0, 0, 0.06);
+gap: 10px;
+border-radius: 2px;
+position: absolute;
+left: -120px;
+}
+`
+
+const ListWrap = styled.div`
+@media(max-width: 576px) {
+width: fit-content;
+display: flex;
+align-items: center;
+cursor: pointer;
+}
+`
+
+const List = styled.div`
+@media(max-width: 576px) {
+font-weight: 400;
+font-size: 14px;
+line-height: 20px;
+color: #000;
+cursor: pointer;
+margin-left: 15px;
+}
+`
+
 
 
 export {
@@ -384,4 +431,7 @@ export {
   Parent,
   CardName,
   VideoPrice,
+  Menu,
+  ListWrap,
+  List
 }

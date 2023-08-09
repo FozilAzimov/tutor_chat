@@ -17,6 +17,9 @@ import {
   Img,
   ImgWrap,
   LinkWrap,
+  List,
+  ListWrap,
+  Menu,
   Pages,
   PagesText,
   Parent,
@@ -32,6 +35,7 @@ import {
 } from './style';
 
 import { useNavigate } from 'react-router-dom';
+import { Dropdown } from 'antd';
 
 export default function Profile () {
 
@@ -67,7 +71,25 @@ export default function Profile () {
             <Icons.Arrow onClick={() => navigate(-1)} />
           </IconWrap>
           <Title>@Catherine12</Title>
-          <Icons.Angle />
+          <Dropdown
+            trigger={['click']}
+            dropdownRender={() => {
+              return (
+                <Menu>
+                  <ListWrap>
+                    <Icons.Edit />
+                    <List data-name='myprofile'>Edit</List>
+                  </ListWrap>
+                  <ListWrap>
+                    <Icons.Logout />
+                    <List data-name='favorites'>Log out</List>
+                  </ListWrap>
+                </Menu>
+              )
+            }}
+          >
+            <Icons.Angle />
+          </Dropdown>
         </Header>
       </Container>
 

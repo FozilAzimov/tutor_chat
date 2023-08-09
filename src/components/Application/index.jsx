@@ -26,7 +26,7 @@ export default function Application () {
           <IconWrap>
             <Icons.Arrow onClick={() => navigate(-1)} />
           </IconWrap>
-          <Title>Matematika 1-dars</Title>
+          <Title>Kimyo 1-dars</Title>
           <Icons.Angle />
         </Header>
       </Container>
