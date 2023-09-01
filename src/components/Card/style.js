@@ -54,12 +54,14 @@ const getType = ({ type }) => {
       color: '#1C3554',
       fontSize: '16px',
       fontWeight: '600',
+      cursor: 'pointer',
     };
     case 'sm': return {
       color: '#CFCFCF',
       fontSize: '14px',
       fontWeight: '400',
       marginTop: '10px',
+      cursor: 'pointer',
     };
     default: return {
       color: '#000',
@@ -147,25 +149,28 @@ ${getLiked}
 }
 `
 
-const Input = styled.input`
+const Comment = styled.div`
 @media(max-width: 576px){
 width: 100%;
 height: 44px;
-font-size: 14px;
-font-weight: 400;
-padding-left: 20px;
+padding: 0 20px;
 box-shadow: 0px 5px 31px 0px #00000008;
 border: 1px solid #F3F3F3;
-outline: none;
 margin-top: 10px;
-::placeholder{
-  color: #CFCFCF;
-}
+display: flex;
+justify-content: space-between;
+align-items: center;
 }
 `
 
-
-
+const TextComment = styled.div`
+@media(max-width: 576px){
+color: #CFCFCF;
+font-size: 14px;
+font-weight: 400;
+cursor: pointer;
+}
+`
 
 
 export {
@@ -178,5 +183,6 @@ export {
   CardTitle,
   CardMessage,
   Liked,
-  Input
+  Comment,
+  TextComment
 }

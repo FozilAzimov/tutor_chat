@@ -12,7 +12,8 @@ import {
   CardMessage,
   Container,
   Liked,
-  Input,
+  Comment,
+  TextComment,
 } from './style';
 
 import { useNavigate } from 'react-router-dom';
@@ -49,7 +50,10 @@ export default function Card ({ Text, width, center }) {
         </Liked>
         <UserText type='sm'>View all 50 comments</UserText>
       </Container>
-      <Input type='text' placeholder='Add comment...' />
+      <Comment>
+        <TextComment>Add Comment...</TextComment>
+        <TextComment>Post</TextComment>
+      </Comment>
     </Wrapper>
   )
 }
