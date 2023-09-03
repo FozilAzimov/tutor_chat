@@ -29,6 +29,7 @@ import ProfilePage from "../pages/Profile";
 import FreePage from "../pages/Free";
 import PremiumProfilePage from "../pages/PremiumProfile";
 import SavedPage from "../pages/Saved";
+import CommentsPage from "../pages/Comments";
 
 
 const navbar = [
@@ -167,6 +168,13 @@ const navbar = [
     id: useUniqeID,
     path: '/saved',
     element: < SavedPage />,
+    private: false,
+    hidden: true,
+  },
+  {
+    id: useUniqeID,
+    path: '/comments',
+    element: < CommentsPage />,
     private: false,
     hidden: true,
   },

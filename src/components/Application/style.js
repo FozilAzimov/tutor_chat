@@ -24,6 +24,7 @@ padding: 10px;
 `;
 Icons.Angle = styled(angle)`
 @media(max-width: 576px){
+margin: 0 10px;
 width: 20px;
 height: 20px;
 cursor: pointer;

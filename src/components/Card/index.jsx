@@ -37,7 +37,7 @@ export default function Card ({ Text, width, center }) {
         </CardMessage>
       </CardTitle>
       <Container>
-        <UserText type='md'>Matematika bo’yicha video Kurs(lar)</UserText>
+        <UserText type='md'>Matematika bo'yicha video Kurs(lar)</UserText>
         <Liked>
           <Liked type='liked'>
             <Icons.Leavel />
@@ -51,8 +51,8 @@ export default function Card ({ Text, width, center }) {
         <UserText type='sm'>View all 50 comments</UserText>
       </Container>
       <Comment>
-        <TextComment>Add Comment...</TextComment>
-        <TextComment>Post</TextComment>
+        <TextComment onClick={() => navigate(`/comments`)}>Add Comment...</TextComment>
+        <TextComment onClick={() => navigate(`/comments`)}>Post</TextComment>
       </Comment>
     </Wrapper>
   )

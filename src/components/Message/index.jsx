@@ -20,20 +20,22 @@ export default function Message () {
 
   const navigate = useNavigate();
 
+  const realDate = new Date();
   const data = [
     {
       id: 1,
-      date: '26.05.2023',
+      date: `${realDate.getDate() >= 10 ? realDate.getDate() : `0${realDate.getDate()}`}.${realDate.getMonth() + 1 >= 10 ? realDate.getMonth() + 1 : `0${realDate.getMonth() + 1}`}.${realDate.getFullYear()}`,
       title: 'My name is Catherine. I like dancing in the rain and travelling',
       description: 'My name is Catherine. I like dancing in the rain and travelling all around the world. My name is Catherine. I like dancing in the rain and travelling all around the world.My name is Catherine. I like dancing in the rain and travelling all around the world.',
     },
     {
       id: 2,
-      date: '26.05.2023',
+      date: `${realDate.getDate() >= 10 ? realDate.getDate() : `0${realDate.getDate()}`}.${realDate.getMonth() + 1 >= 10 ? realDate.getMonth() + 1 : `0${realDate.getMonth() + 1}`}.${realDate.getFullYear()}`,
       title: 'My name is Catherine. I like dancing in the rain and travelling',
       description: 'My name is Catherine. I like dancing in the rain and travelling all around the world. My name is Catherine. I like dancing in the rain and travelling all around the world.My name is Catherine. I like dancing in the rain and travelling all around the world.',
     },
   ];
+
   return (
     <Wrapper>
       <Container>

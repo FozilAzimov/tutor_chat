@@ -11,7 +11,7 @@ import private_open from '../../assets/icons/private_open.svg';
 const Telegramcontext = createContext();
 export const TelegramContext = () => useContext(Telegramcontext);
 
-const TelegramPovider = ({ children }) => {
+const TelegramProvider = ({ children }) => {
 
   const [post, setPost] = useState([
     {
@@ -141,7 +141,7 @@ const TelegramPovider = ({ children }) => {
   </Telegramcontext.Provider>
 }
 
-export default TelegramPovider;
+export default TelegramProvider;
 
 
 

@@ -5,6 +5,7 @@ import { ReactComponent as arrow } from "../../assets/icons/arrow_prewiev.svg";
 const Icons = styled.div``;
 
 const IconWrap = styled.div`
+position: absolute;
 :hover{
   background: #f5f5f5;
 }
@@ -40,8 +41,13 @@ padding: 0 27px;
 
 const getMargin = ({ type }) => {
   switch (type) {
-    case 'top': return '50px';
-    default: return '0';
+    case 'top': return {
+      marginBottom: '50px',
+      position: 'relative',
+    };
+    default: return {
+      marginBottom: '0',
+    };
   }
 }
 
@@ -49,7 +55,7 @@ const TitleWrapper = styled.div`
 @media(max-width: 576px){
 display: flex;
 align-items: center;
-margin-bottom: ${getMargin};
+${getMargin};
 }
 `
 

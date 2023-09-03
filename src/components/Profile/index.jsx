@@ -99,7 +99,7 @@ export default function Profile () {
             <ImgWrap>
               <Img src={img} />
             </ImgWrap>
-            <Box></Box>
+            <Box />
             <Box>
               <Text type='bold'>1k</Text>
               <Text>Followers</Text>

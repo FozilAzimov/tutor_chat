@@ -46,7 +46,7 @@ export default function MessagesAll () {
           }) => {
             return (
               <MessageBox key={id}>
-                <TitleWrapper>{month}{' '}{day},{' '}{time}</TitleWrapper>
+                <TitleWrapper>{month || 'Yan'}{' '}{day || '1'},{' '}{time || '00:00'}</TitleWrapper>
                 <MessageContent onClick={getMessage}>
                   <Messages type='bold'>{title}</Messages>
                   <Messages>{description}</Messages>
