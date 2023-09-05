@@ -103,6 +103,7 @@ const Item = styled.div`
 display: flex;
 align-items: center;
 margin-top: 30px;
+cursor: pointer;
 }
 `
 

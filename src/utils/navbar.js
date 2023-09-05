@@ -14,7 +14,7 @@ import AcountPage from '../pages/Acount';
 import HomePage from '../pages/Home';
 import LikedPage from '../pages/Liked';
 import SearchPage from '../pages/Search';
-// Hidden true
+// Navbar components hidden true
 import RegistrationPage from "../pages/Regitration";
 import LoginAcountPage from "../pages/LoginAcount";
 import MessagesAllPage from "../pages/MessagesAll"
@@ -30,6 +30,7 @@ import FreePage from "../pages/Free";
 import PremiumProfilePage from "../pages/PremiumProfile";
 import SavedPage from "../pages/Saved";
 import CommentsPage from "../pages/Comments";
+import TotalsPage from "../pages/Totals";
 
 
 const navbar = [
@@ -175,6 +176,13 @@ const navbar = [
     id: useUniqeID,
     path: '/comments',
     element: < CommentsPage />,
+    private: false,
+    hidden: true,
+  },
+  {
+    id: useUniqeID,
+    path: '/totals',
+    element: < TotalsPage />,
     private: false,
     hidden: true,
   },

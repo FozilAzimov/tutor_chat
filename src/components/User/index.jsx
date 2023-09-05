@@ -19,9 +19,11 @@ import {
 
 import category from '../../utils/searchNavbar';
 import { TelegramContext } from '../../context/Telegram';
+import { useNavigate } from 'react-router-dom';
 
 export default function User () {
 
+  const navigate = useNavigate();
   const [post,] = TelegramContext();
 
 
@@ -49,7 +51,7 @@ export default function User () {
           {
             post?.map(({ id, name, url, description }) => {
               return (
-                <Item key={id}>
+                <Item key={id} onClick={() => navigate('/profile')}>
                   <Img src={url} />
                   <Title>
                     <ItemText type='bold'>{name}</ItemText>
