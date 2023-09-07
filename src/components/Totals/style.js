@@ -234,7 +234,7 @@ const getTitle = ({ type }) => {
       color: 'rgba(70, 140, 231, 1)',
     };
     default: return {
-      fontSize: '18px',
+      fontSize: '16px',
       fontWeight: '400',
       color: 'rgba(0, 0, 0, 1)',
     }
@@ -266,7 +266,7 @@ const getTitleSub = ({ type }) => {
       color: 'rgba(70, 140, 231, 1)',
     };
     default: return {
-      fontSize: '16px',
+      fontSize: '15px',
       fontWeight: '400',
       color: 'rgba(0, 0, 0, 1)',
     }
