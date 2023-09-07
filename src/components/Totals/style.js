@@ -4,6 +4,9 @@ import { ReactComponent as arrow } from "../../assets/icons/arrow_prewiev.svg";
 import { ReactComponent as angle } from "../../assets/icons/dodEdit.svg";
 import { ReactComponent as edit } from "../../assets/icons/edit.svg";
 import { ReactComponent as logout } from "../../assets/icons/loguot.svg";
+import { ReactComponent as like } from "../../assets/icons/total_like.svg";
+import { ReactComponent as chaqmoq } from "../../assets/icons/total_icon.svg";
+import { ReactComponent as message } from "../../assets/icons/total_message.svg";
 
 const Icons = styled.div``;
 
@@ -29,13 +32,22 @@ width: 20px;
 height: 20px;
 cursor: pointer;
 padding: 4px;
-margin: 0 10px;
+margin-left: 20px;
 }
 `;
 Icons.Edit = styled(edit)`
 cursor: pointer;
 `;
 Icons.Logout = styled(logout)`
+cursor: pointer;
+`;
+Icons.Like = styled(like)`
+cursor: pointer;
+`;
+Icons.Chaqmoq = styled(chaqmoq)`
+cursor: pointer;
+`;
+Icons.Message = styled(message)`
 cursor: pointer;
 `;
 
@@ -55,7 +67,7 @@ const IconWrap = styled.div`
 const Wrapper = styled.div`
 @media(max-width: 576px){
 width: 100%;
-padding-top: 25px;
+padding-top: 20px;
 }
 `
 
@@ -82,7 +94,7 @@ const getTitleMax = ({ type }) => {
     };
     default: return {
       color: 'rgba(154, 154, 154, 1)',
-      fontSize: '15px',
+      fontSize: '14px',
       fontWeight: '400',
       textAlign: 'center',
       lineHeight: '0',
@@ -99,7 +111,7 @@ const getTitleMin = ({ type }) => {
     };
     default: return {
       color: 'rgba(154, 154, 154, 1)',
-      fontSize: '14px',
+      fontSize: '13px',
       fontWeight: '400',
       textAlign: 'center',
       lineHeight: '0',
@@ -109,10 +121,12 @@ const getTitleMin = ({ type }) => {
 
 const Title = styled.div`
 @media (max-width: 576px) {
-  ${getTitleMax}
+  ${getTitleMax};
+  font-family: 'Inter', sans-serif;
 }
 @media (max-width: 350px) {
-  ${getTitleMin}
+  ${getTitleMin};
+  font-family: 'Inter', sans-serif;
 }
 `
 
@@ -154,6 +168,117 @@ margin-left: 15px;
 }
 `
 
+const getList = ({ type }) => {
+  switch (type) {
+    case 'max': return {
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+    };
+    case 'min': return {
+      display: 'flex',
+      alignItems: 'center',
+    };
+    default: return {
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'start',
+      gap: '8px'
+    }
+  }
+}
+
+const TotalList = styled.div`
+@media(max-width: 576px) {
+${getList}
+margin-top: ${({ top }) => top ? '30px' : '10px'};
+}
+`
+
+const TotalImg = styled.img`
+@media(max-width: 576px) {
+margin-right: 15px;
+}
+@media(max-width: 350px) {
+  width: 80px;
+  height: 80px;
+  margin-right: 15px;
+}
+`
+
+const getTitle = ({ type }) => {
+  switch (type) {
+    case 'sub': return {
+      width: '160px',
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+    };
+    case 'subMin': return {
+      display: 'flex',
+      alignItems: 'center',
+      gap: '5px',
+      fontSize: '12px',
+      fontWeight: '500',
+      color: 'rgba(154, 154, 154, 1)',
+    };
+    case 'firstSub': return {
+      display: 'flex',
+      alignItems: 'center',
+      gap: '5px',
+      fontSize: '12px',
+      fontWeight: '500',
+      color: 'rgba(70, 140, 231, 1)',
+    };
+    default: return {
+      fontSize: '18px',
+      fontWeight: '400',
+      color: 'rgba(0, 0, 0, 1)',
+    }
+  }
+}
+
+const getTitleSub = ({ type }) => {
+  switch (type) {
+    case 'sub': return {
+      width: '140px',
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+    };
+    case 'subMin': return {
+      display: 'flex',
+      alignItems: 'center',
+      gap: '3px',
+      fontSize: '12px',
+      fontWeight: '500',
+      color: 'rgba(154, 154, 154, 1)',
+    };
+    case 'firstSub': return {
+      display: 'flex',
+      alignItems: 'center',
+      gap: '3px',
+      fontSize: '12px',
+      fontWeight: '500',
+      color: 'rgba(70, 140, 231, 1)',
+    };
+    default: return {
+      fontSize: '16px',
+      fontWeight: '400',
+      color: 'rgba(0, 0, 0, 1)',
+    }
+  }
+}
+
+const TotalTitle = styled.div`
+@media(max-width: 576px) {
+${getTitle};
+}
+@media(max-width: 350px) {
+${getTitleSub};
+}
+`
 
 
 export {
@@ -165,5 +290,8 @@ export {
   ListWrap,
   Menu,
   Title,
-  Wrapper
+  Wrapper,
+  TotalList,
+  TotalImg,
+  TotalTitle,
 }
