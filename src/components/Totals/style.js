@@ -198,11 +198,13 @@ margin-top: ${({ top }) => top ? '30px' : '10px'};
 
 const TotalImg = styled.img`
 @media(max-width: 576px) {
-margin-right: 15px;
-}
-@media(max-width: 350px) {
   width: 80px;
   height: 80px;
+  margin-right: 15px;
+}
+@media(max-width: 350px) {
+  width: 70px;
+  height: 70px;
   margin-right: 15px;
 }
 `
