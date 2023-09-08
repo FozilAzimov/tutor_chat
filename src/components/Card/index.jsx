@@ -23,13 +23,17 @@ import { useRef } from 'react';
 export default function Card ({ Text, width, center }) {
 
   const navigate = useNavigate();
-  const [isactive, setIsActive] = useState("");
   const commentRef = useRef();
+  const [isactive, setIsActive] = useState("");
 
   const Change = () => {
     commentRef.current.value
       ? setIsActive(commentRef.current.value)
       : setIsActive(commentRef.current.value);
+  }
+
+  const Click = () => {
+    commentRef.current.focus();
   }
 
   return (
@@ -61,8 +65,8 @@ export default function Card ({ Text, width, center }) {
         <UserText type='sm'>View all 50 comments</UserText>
       </Container>
       <Comment>
-        <InputComment ref={commentRef} placeholder='Add comment...' onChange={Change} />
-        <TextComment isactive={isactive}>Post</TextComment>
+        <InputComment ref={commentRef} onChange={Change} placeholder='Add comment...' />
+        <TextComment isactive={isactive} onClick={Click}>Post</TextComment>
       </Comment>
     </Wrapper>
   )
