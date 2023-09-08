@@ -171,7 +171,7 @@ align-items: center;
 const InputComment = styled.input`
 @media(max-width: 576px){
 width: 100%;
-height: 44px;
+height: 42px;
 font-size: 13px;
 font-weight: 400;
 border: none;
