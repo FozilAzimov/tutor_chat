@@ -160,13 +160,29 @@ margin-top: 10px;
 display: flex;
 justify-content: space-between;
 align-items: center;
+::placeholder{
+  color: #CFCFCF;
+  font-size: 13px;
+  font-weight: 400;
+}
 }
 `
 
+const InputComment = styled.input`
+@media(max-width: 576px){
+width: 100%;
+height: 44px;
+font-size: 13px;
+font-weight: 400;
+border: none;
+outline: none;
+margin-right: 20px;
+}
+`
 const TextComment = styled.div`
 @media(max-width: 576px){
-color: #CFCFCF;
-font-size: 14px;
+color: ${({ isactive }) => isactive ? '#000' : '#CFCFCF'};
+font-size: 13px;
 font-weight: 400;
 cursor: pointer;
 }
@@ -184,5 +200,6 @@ export {
   CardMessage,
   Liked,
   Comment,
+  InputComment,
   TextComment
 }

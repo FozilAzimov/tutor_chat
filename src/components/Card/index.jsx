@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import card_img from '../../assets/imgs/card_img.jpg'
 
@@ -14,13 +14,23 @@ import {
   Liked,
   Comment,
   TextComment,
+  InputComment,
 } from './style';
 
 import { useNavigate } from 'react-router-dom';
+import { useRef } from 'react';
 
 export default function Card ({ Text, width, center }) {
 
   const navigate = useNavigate();
+  const [isactive, setIsActive] = useState("");
+  const commentRef = useRef();
+
+  const Change = () => {
+    commentRef.current.value
+      ? setIsActive(commentRef.current.value)
+      : setIsActive(commentRef.current.value);
+  }
 
   return (
     <Wrapper>
@@ -51,8 +61,8 @@ export default function Card ({ Text, width, center }) {
         <UserText type='sm'>View all 50 comments</UserText>
       </Container>
       <Comment>
-        <TextComment onClick={() => navigate(`/comments`)}>Add Comment...</TextComment>
-        <TextComment onClick={() => navigate(`/comments`)}>Post</TextComment>
+        <InputComment ref={commentRef} placeholder='Add comment...' onChange={Change} />
+        <TextComment isactive={isactive}>Post</TextComment>
       </Comment>
     </Wrapper>
   )

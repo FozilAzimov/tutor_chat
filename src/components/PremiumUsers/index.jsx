@@ -77,8 +77,8 @@ export default function PremiumUser () {
                   <ContentText>{time}</ContentText>
                   {
                     privateIcon
-                      ? <UserImg src={private1} onClick={() => navigate('/totals')} />
-                      : <UserImg src={private2} />
+                      ? <UserImg src={private1} />
+                      : <UserImg src={private2} onClick={() => navigate('/totals')} />
                   }
                 </ContentBox>
               </ContentBox>

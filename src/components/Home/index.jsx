@@ -48,7 +48,6 @@ export default function Home () {
     navigate(`/telegram`);
   }
 
-
   return (
     <Wrapper>
       <Container>
