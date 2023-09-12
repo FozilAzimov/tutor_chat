@@ -81,6 +81,7 @@ ${getType}
 const CardImg = styled.img`
 @media(max-width: 576px){
 width: 100%;
+cursor: pointer;
 }
 `;
 

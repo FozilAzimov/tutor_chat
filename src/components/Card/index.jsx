@@ -42,7 +42,7 @@ export default function Card ({ Text, width, center }) {
         <Icons.UserImg />
         <UserText>Username</UserText>
       </UserName>
-      <CardImg src={card_img} />
+      <CardImg src={card_img} onClick={() => navigate('/total')} />
       <CardTitle>
         <CardMessage width={width} center={center}>
           <Container>

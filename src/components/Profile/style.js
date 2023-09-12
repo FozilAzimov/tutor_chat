@@ -375,9 +375,7 @@ align-items: start;
 padding: 8px 10px;
 width: 130px;
 background: #fff;
-box-shadow: 0px 20px 38px rgba(0, 0, 0, 0.06),
-0px 7px 46px rgba(0, 0, 0, 0.06),
-0px 8px 15px rgba(0, 0, 0, 0.06);
+box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.05);
 gap: 10px;
 border-radius: 2px;
 position: absolute;
