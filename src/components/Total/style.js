@@ -13,6 +13,9 @@ import { ReactComponent as no_liked } from "../../assets/icons/no_liked.svg";
 import { ReactComponent as university } from "../../assets/icons/university.svg";
 import { ReactComponent as sovga } from "../../assets/icons/sovga.svg";
 import { ReactComponent as avatar } from "../../assets/icons/avatar.svg";
+import { ReactComponent as totalClose } from "../../assets/icons/total_close.svg";
+import { ReactComponent as totalGalichka } from "../../assets/icons/total_galichka.svg";
+import { ReactComponent as iconImagePlus } from "../../assets/icons/icon_image-plus.svg";
 
 const Icons = styled.div``;
 
@@ -114,6 +117,15 @@ height: 15px !important;
   height: 13px !important;
 }
 `;
+Icons.TotalClose = styled(totalClose)`
+cursor: pointer;
+`;
+Icons.TotalGalichka = styled(totalGalichka)`
+cursor: pointer;
+`;
+Icons.IconImagePlus = styled(iconImagePlus)`
+cursor: pointer;
+`;
 
 const IconWrap = styled.div`
 @media(max-width: 576px){
@@ -155,6 +167,11 @@ align-items: center;
 
 const getTitleMax = ({ type }) => {
   switch (type) {
+    case 'large': return {
+      color: '000',
+      fontSize: '20px',
+      fontWeight: '600'
+    };
     case 'max': return {
       color: '000',
       fontSize: '20px',
@@ -170,8 +187,35 @@ const getTitleMax = ({ type }) => {
   }
 }
 
+const getTitleMediumMin = ({ type }) => {
+  switch (type) {
+    case 'large': return {
+      color: '000',
+      fontSize: '16px',
+      fontWeight: '600'
+    };
+    case 'max': return {
+      color: '000',
+      fontSize: '18px',
+      fontWeight: '500'
+    };
+    default: return {
+      color: 'rgba(154, 154, 154, 1)',
+      fontSize: '13px',
+      fontWeight: '400',
+      textAlign: 'center',
+      lineHeight: '0',
+    }
+  }
+}
+
 const getTitleMin = ({ type }) => {
   switch (type) {
+    case 'large': return {
+      color: '000',
+      fontSize: '15px',
+      fontWeight: '600'
+    };
     case 'max': return {
       color: '000',
       fontSize: '18px',
@@ -192,34 +236,131 @@ const Title = styled.div`
   ${getTitleMax};
   font-family: 'Inter', sans-serif;
 }
+@media (max-width: 400px) {
+  ${getTitleMediumMin};
+  font-family: 'Inter', sans-serif;
+}
 @media (max-width: 350px) {
   ${getTitleMin};
   font-family: 'Inter', sans-serif;
 }
 `
 
+const getTypeDropdown = ({ type }) => {
+  switch (type) {
+    case 'video': return {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'start',
+      padding: '22px 18px',
+      width: '88%',
+      height: '200px',
+      background: '#fff',
+      gap: '10px',
+      borderRadius: '5px',
+      position: 'absolute',
+      left: '50%',
+      top: '50%',
+      transform: 'translate(-50%, -30%)',
+      boxShadow: '0px 0px 20px 5px rgba(0, 0, 0, 0.3)',
+    };
+    default: return {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'start',
+      padding: '6px 10px',
+      width: '140px',
+      background: '#fff',
+      boxShadow: '0px 5px 15px 0px rgba(0, 0, 0, 0.05)',
+      gap: '10px',
+      borderRadius: '2px',
+      position: 'absolute',
+      left: '-130px',
+    };
+  }
+}
+
+const getTypeDropdownTo = ({ type }) => {
+  switch (type) {
+    case 'video': return {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'start',
+      padding: '20px 16px',
+      width: '88%',
+      height: '190px',
+      background: '#fff',
+      gap: '10px',
+      borderRadius: '5px',
+      position: 'absolute',
+      left: '50%',
+      top: '50%',
+      transform: 'translate(-50%, -30%)',
+      boxShadow: '0px 0px 20px 5px rgba(0, 0, 0, 0.3)',
+    };
+    default: return {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'start',
+      padding: '6px 10px',
+      width: '140px',
+      background: '#fff',
+      boxShadow: '0px 5px 15px 0px rgba(0, 0, 0, 0.05)',
+      gap: '10px',
+      borderRadius: '2px',
+      position: 'absolute',
+      left: '-130px',
+    };
+  }
+}
+
 const Menu = styled.div`
 @media(max-width: 576px) {
-display: grid;
-flex-direction: column;
-align-items: start;
-padding: 6px 10px;
-width: 140px;
-background: #fff;
-box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.05);
-gap: 10px;
-border-radius: 2px;
-position: absolute;
-left: -130px;
+${getTypeDropdown}
+}
+@media(max-width: 400px) {
+${getTypeDropdownTo}
 }
 `
 
+const getTypeListGroup = ({ type }) => {
+  switch (type) {
+    case 'modal': return {
+      width: '100%',
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      paddingBottom: '5px',
+    };
+    case 'centerList': return {
+      width: '100%',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      padding: '15px 0',
+      borderTop: '1px solid rgba(236, 239, 244, 1)',
+      borderBottom: '1px solid rgba(236, 239, 244, 1)',
+    };
+    case 'modalCenterList': return {
+      width: '100%',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+      padding: '5px 0',
+    };
+    default: return {
+      width: 'fit-content',
+      display: 'flex',
+      alignItems: 'center',
+      cursor: 'pointer',
+    };
+  }
+}
+
 const ListWrap = styled.div`
 @media(max-width: 576px) {
-width: fit-content;
-display: flex;
-align-items: center;
-cursor: pointer;
+${getTypeListGroup};
 }
 `
 
@@ -231,6 +372,18 @@ line-height: 20px;
 color: #000;
 cursor: pointer;
 margin-left: 15px;
+}
+`
+
+const SubTextModal = styled.div`
+@media(max-width: 576px) {
+color: #347AE2;
+font-size: 14px;
+font-style: normal;
+font-weight: 600;
+line-height: 104.5%;
+margin-top: 7px;
+cursor: pointer;
 }
 `
 
@@ -307,18 +460,20 @@ const Rectangle = styled.div`
 `
 
 const Completed = styled.div`
+position: absolute;
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%);
+font-weight: 400;
+color: rgba(255, 255, 255, 1);
+z-index: 10;
+`
+
+const ModalTitle = styled.div`
 @media (max-width: 576px){
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 13px;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 1);
-  z-index: 10;
-}
-@media (max-width: 350px){
-  font-size: 11px;
+font-size: 14px;
+color: #292C38;
+font-weight: 700;
 }
 `
 
@@ -569,6 +724,7 @@ export {
   Icons,
   List,
   ListWrap,
+  SubTextModal,
   Menu,
   Title,
   Wrapper,
@@ -586,4 +742,5 @@ export {
   TeacherCard,
   CardItem,
   CardBtn,
+  ModalTitle,
 }
