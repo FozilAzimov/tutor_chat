@@ -368,12 +368,12 @@ const Content = styled.div`
 const Img = styled.img`
 @media(max-width: 576px) {
   width: ${({ size }) => size ? '55px' : '40px'};
-  margin-right: ${({ size }) => size ? '15px' : '27px'};
+  margin-right: ${({ size }) => size ? '15px' : '29px'};
   cursor: pointer;
 }
 @media(max-width: 350px) {
   width: ${({ size }) => size ? '50px' : '35px'};
-  margin-right: ${({ size }) => size ? '13px' : '27px'};
+  margin-right: ${({ size }) => size ? '13px' : '29px'};
   cursor: pointer;
 }
 `
