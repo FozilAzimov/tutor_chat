@@ -31,6 +31,7 @@ import PremiumProfilePage from "../pages/PremiumProfile";
 import SavedPage from "../pages/Saved";
 import TotalsPage from "../pages/Totals";
 import TotalPage from "../pages/Total";
+import PortfolioPage from "../pages/Portfolio";
 
 
 const navbar = [
@@ -183,6 +184,13 @@ const navbar = [
     id: useUniqeID,
     path: '/total',
     element: < TotalPage />,
+    private: false,
+    hidden: true,
+  },
+  {
+    id: useUniqeID,
+    path: '/portfolio',
+    element: < PortfolioPage />,
     private: false,
     hidden: true,
   },

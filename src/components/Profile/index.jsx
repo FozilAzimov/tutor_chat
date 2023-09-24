@@ -126,7 +126,7 @@ export default function Profile () {
 
           <BtnWrap>
             <Btn follow="true">Follow</Btn>
-            <Btn>Portfolio</Btn>
+            <Btn onClick={() => navigate('/portfolio')}>Portfolio</Btn>
             <Btn>Message</Btn>
           </BtnWrap>
 

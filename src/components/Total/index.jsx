@@ -37,10 +37,6 @@ export default function Total () {
 
   const navigate = useNavigate();
 
-  const Click = () => {
-    console.log('Heyy');
-  }
-
   return (
     <>
       <Wrapper>
@@ -96,7 +92,7 @@ export default function Total () {
                 )
               }}
             >
-              <Img src={videoImg} onClick={Click} />
+              <Img src={videoImg} />
             </Dropdown>
           </Video>
           <VideoSubTitle>View all</VideoSubTitle>
