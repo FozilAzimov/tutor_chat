@@ -346,6 +346,7 @@ const getTypeContentMin = ({ type }) => {
       fontSize: '9px',
       color: '#969696',
       margin: '3px 15px 0 0',
+      cursor: 'pointer',
     };
     default: return {
       color: '#000',
@@ -368,15 +369,19 @@ const Img = styled.img`
 @media(max-width: 576px) {
   width: ${({ size }) => size ? '55px' : '40px'};
   margin-right: ${({ size }) => size ? '15px' : '27px'};
+  cursor: pointer;
 }
 @media(max-width: 350px) {
   width: ${({ size }) => size ? '50px' : '35px'};
-  margin-right: ${({ size }) => size ? '13px' : '25px'};
+  margin-right: ${({ size }) => size ? '13px' : '27px'};
+  cursor: pointer;
 }
 `
 
 const Install = styled.img`
-@media(max-width: 576px) {}
+@media(max-width: 576px) {
+  cursor: pointer;
+}
 `
 
 
